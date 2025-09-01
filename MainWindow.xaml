@@ -7,10 +7,12 @@
         xmlns:system="clr-namespace:System;assembly=mscorlib"
         mc:Ignorable="d"
         Title="Gaming Tweaks Manager Pro" 
-        Height="900" Width="1400"
+        Height="720" Width="1280"
         MinHeight="700" MinWidth="1100"
         WindowStartupLocation="CenterScreen"
-        Background="{StaticResource PrimaryDark}">
+        Background="{StaticResource DarkBackground}"
+        Foreground="{StaticResource TextPrimary}"
+        FontFamily="{StaticResource TechFont}">
     <Grid Background="{StaticResource DarkBackgroundBrush}">
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto"/>
@@ -178,8 +180,17 @@
                     <!-- Conteúdo Dinâmico -->
                     <Grid Grid.Row="1">
                         <!-- Tela Inicial de Hardware (quando nenhuma categoria está selecionada) -->
-                        <Grid x:Name="HardwareInfoPanel" 
-                              Visibility="{Binding SelectedCategory, Converter={StaticResource InvertedBooleanToVisibilityConverter}}">
+                        <Grid x:Name="HardwareInfoPanel">
+                            <Grid.Style>
+                                <Style TargetType="Grid">
+                                    <Setter Property="Visibility" Value="Collapsed"/>
+                                    <Style.Triggers>
+                                        <DataTrigger Binding="{Binding SelectedCategory}" Value="{x:Null}">
+                                            <Setter Property="Visibility" Value="Visible"/>
+                                        </DataTrigger>
+                                    </Style.Triggers>
+                                </Style>
+                            </Grid.Style>
                             <ScrollViewer VerticalScrollBarVisibility="Auto" Padding="32">
                                 <StackPanel MaxWidth="900">
                                     <!-- Cabeçalho -->
@@ -355,8 +366,17 @@
                 </Grid>
 
                 <!-- Lista de Tweaks (quando categoria selecionada) -->
-                        <ScrollViewer Visibility="{Binding SelectedCategory, Converter={StaticResource BooleanToVisibilityConverter}}" 
-                                    VerticalScrollBarVisibility="Auto" Margin="24">
+                        <ScrollViewer VerticalScrollBarVisibility="Auto" Margin="24">
+                            <ScrollViewer.Style>
+                                <Style TargetType="ScrollViewer">
+                                    <Setter Property="Visibility" Value="Visible"/>
+                                    <Style.Triggers>
+                                        <DataTrigger Binding="{Binding SelectedCategory}" Value="{x:Null}">
+                                            <Setter Property="Visibility" Value="Collapsed"/>
+                                        </DataTrigger>
+                                    </Style.Triggers>
+                                </Style>
+                            </ScrollViewer.Style>
                             <ItemsControl ItemsSource="{Binding FilteredTweaks}">
                                 <ItemsControl.ItemTemplate>
                                     <DataTemplate>
@@ -454,22 +474,22 @@
                     <StackPanel Orientation="Horizontal" DataContext="{Binding HardwareMonitoring}">
                         <Border Background="{StaticResource AccentBrush}" CornerRadius="3" Padding="6,2" Margin="0,0,8,0">
                             <StackPanel Orientation="Horizontal">
-                                <materialDesign:PackIcon Kind="Chip" Width="14" Height="14" Foreground="White" VerticalAlignment="Center"/>
-                                <TextBlock Text="{Binding CpuUsageText}" Foreground="White" FontSize="11" Margin="4,0,0,0"/>
+                                <materialDesign:PackIcon Kind="Chip" Width="14" Height="14" Foreground="{StaticResource PrimaryDark}" VerticalAlignment="Center"/>
+                                <TextBlock Text="{Binding CpuUsageText, FallbackValue='CPU: 0%'}" Foreground="{StaticResource PrimaryDark}" FontSize="11" Margin="4,0,0,0"/>
                             </StackPanel>
                         </Border>
                         
                         <Border Background="{StaticResource AccentBrush}" CornerRadius="3" Padding="6,2" Margin="0,0,8,0">
                             <StackPanel Orientation="Horizontal">
-                                <materialDesign:PackIcon Kind="Memory" Width="14" Height="14" Foreground="White" VerticalAlignment="Center"/>
-                                <TextBlock Text="{Binding RamUsageText}" Foreground="White" FontSize="11" Margin="4,0,0,0"/>
+                                <materialDesign:PackIcon Kind="Memory" Width="14" Height="14" Foreground="{StaticResource PrimaryDark}" VerticalAlignment="Center"/>
+                                <TextBlock Text="{Binding RamUsageText, FallbackValue='RAM: 0%'}" Foreground="{StaticResource PrimaryDark}" FontSize="11" Margin="4,0,0,0"/>
                             </StackPanel>
                         </Border>
                         
                         <Border Background="{StaticResource AccentBrush}" CornerRadius="3" Padding="6,2" Margin="0,0,8,0">
                             <StackPanel Orientation="Horizontal">
-                                <materialDesign:PackIcon Kind="Thermometer" Width="14" Height="14" Foreground="White" VerticalAlignment="Center"/>
-                                <TextBlock Text="{Binding CpuTempText}" Foreground="White" FontSize="11" Margin="4,0,0,0"/>
+                                <materialDesign:PackIcon Kind="Thermometer" Width="14" Height="14" Foreground="{StaticResource PrimaryDark}" VerticalAlignment="Center"/>
+                                <TextBlock Text="{Binding CpuTempText, FallbackValue='TEMP: 0°C'}" Foreground="{StaticResource PrimaryDark}" FontSize="11" Margin="4,0,0,0"/>
                             </StackPanel>
                         </Border>
                     </StackPanel>
