@@ -122,11 +122,12 @@ namespace GamingTweaksManager.ViewModels
             _hardwareMonitoring = new HardwareMonitoringService();
             _stateService = new TweakStateService();
 
+            // Inicializar coleções vazias
+            Categories = new ObservableCollection<TweakCategory>();
+            FilteredTweaks = new ObservableCollection<TweakItem>();
+
             // Iniciar monitoramento de hardware
             _hardwareMonitoring.StartMonitoring();
-
-            // Carregar dados
-            LoadTweaksAsync();
 
             // Verificar se está executando como administrador
             _isAdministrator = IsRunningAsAdministrator();
@@ -139,7 +140,7 @@ namespace GamingTweaksManager.ViewModels
             RefreshCommand = new RelayCommand(async () => await LoadTweaksAsync());
 
             // Carregar tweaks na inicialização
-            _ = Task.Run(LoadTweaksAsync);
+            _ = Task.Run(async () => await LoadTweaksAsync());
         }
 
         /// <summary>
@@ -171,17 +172,29 @@ namespace GamingTweaksManager.ViewModels
 
                 var categories = await _tweakLoader.LoadTweaksAsync();
 
-                Categories = new ObservableCollection<TweakCategory>(categories);
+                // Usar Dispatcher para atualizar UI thread
+                Application.Current.Dispatcher.Invoke(() =>
+                {
+                    Categories.Clear();
+                    foreach (var category in categories)
+                    {
+                        Categories.Add(category);
+                    }
+                });
+
                 var totalTweaks = categories.Sum(c => c.Tweaks.Count);
                 StatusMessage = $"✅ {totalTweaks} tweaks carregados em {categories.Count} categorias";
+                OnPropertyChanged(nameof(Categories));
             }
             catch (Exception ex)
             {
                 StatusMessage = $"❌ Erro ao carregar tweaks: {ex.Message}";
+                System.Diagnostics.Debug.WriteLine($"Erro LoadTweaksAsync: {ex}");
             }
             finally
             {
                 _isLoading = false;
+                OnPropertyChanged(nameof(IsLoading));
             }
         }
 

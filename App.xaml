@@ -61,6 +61,9 @@
                     </DataTrigger>
                 </Style.Triggers>
             </Style>
+            
+            <!-- Conversor invertido -->
+            <converters:InvertedBooleanToVisibilityConverter x:Key="InvertedBooleanToVisibilityConverter" xmlns:converters="clr-namespace:GamingTweaksManager.Converters"/>
 
             <!-- Estilos Modernos -->
             

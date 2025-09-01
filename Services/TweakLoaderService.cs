@@ -35,9 +35,19 @@ namespace GamingTweaksManager.Services
         public async Task<List<TweakCategory>> LoadTweaksAsync()
         {
             var categories = InitializeCategories();
+            
+            // Verificar se o diretório existe
+            if (!Directory.Exists(_tweaksDirectory))
+            {
+                System.Diagnostics.Debug.WriteLine($"Diretório de tweaks não encontrado: {_tweaksDirectory}");
+                return categories;
+            }
+            
             var tweakFiles = Directory.GetFiles(_tweaksDirectory, "*", SearchOption.AllDirectories)
                                     .Where(f => !Path.GetFileName(f).EndsWith(".config") && !Path.GetFileName(f).Contains("."))
                                     .ToList();
+                                    
+            System.Diagnostics.Debug.WriteLine($"Encontrados {tweakFiles.Count} arquivos de tweaks em: {_tweaksDirectory}");
 
             foreach (var file in tweakFiles)
             {

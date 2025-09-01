@@ -308,3 +308,5 @@ C:\Users\joaco\Documents\batchcollect\GamingTweaksManager\obj\Release\net8.0-win
 C:\Users\joaco\Documents\batchcollect\GamingTweaksManager\obj\Release\net8.0-windows\GamingTweaksManager.genruntimeconfig.cache
 C:\Users\joaco\Documents\batchcollect\GamingTweaksManager\obj\Release\net8.0-windows\ref\GamingTweaksManager.dll
 C:\Users\joaco\Documents\batchcollect\GamingTweaksManager\obj\Release\net8.0-windows\GamingTweaksManager.sourcelink.json
+C:\Users\joaco\Documents\batchcollect\GamingTweaksManager\obj\Release\net8.0-windows\GeneratedInternalTypeHelper.g.cs
+C:\Users\joaco\Documents\batchcollect\GamingTweaksManager\obj\Release\net8.0-windows\GamingTweaksManager_MarkupCompile.lref
