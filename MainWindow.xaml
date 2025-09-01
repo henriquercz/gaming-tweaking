@@ -214,7 +214,7 @@
                                     <TextBlock Text="{Binding SelectedCategory.Name, FallbackValue='Gaming Tweaks Manager Pro'}" 
                                              FontFamily="{StaticResource TechFont}"
                                              FontSize="20" FontWeight="Medium" Foreground="White"/>
-                                    <TextBlock Text="{Binding SelectedCategory.Description, FallbackValue='Selecione uma categoria para começar'}"
+                                    <TextBlock Text="{Binding SelectedCategory.Description, FallbackValue='Sistema avançado de otimização para jogos'}"
                                              FontSize="13" Foreground="White" Opacity="0.8" Margin="0,2,0,0"/>
                                 </StackPanel>
                             </StackPanel>
@@ -302,52 +302,52 @@
                     </ScrollViewer>
                 </Grid>
             </Border>
-
-            <!-- Rodapé com Status e Monitoramento -->
-            <materialDesign:Card Grid.Row="2" Margin="8,4,8,8" Background="{StaticResource DarkCardBrush}"
-                               materialDesign:ShadowAssist.ShadowDepth="Depth1">
-                <Grid Margin="16,8">
-                    <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="*"/>
-                        <ColumnDefinition Width="Auto"/>
-                    </Grid.ColumnDefinitions>
-
-                    <StackPanel Grid.Column="0" Orientation="Horizontal">
-                        <TextBlock Text="{Binding StatusMessage, FallbackValue='Pronto'}"
-                                 Style="{StaticResource MaterialDesignBody2TextBlock}"
-                                 VerticalAlignment="Center" Margin="0,0,16,0"/>
-                        
-                        <!-- Monitoramento de Hardware -->
-                        <StackPanel Orientation="Horizontal" DataContext="{Binding HardwareMonitoring}">
-                            <Border Background="{StaticResource AccentGreenBrush}" CornerRadius="3" Padding="6,2" Margin="0,0,8,0">
-                                <StackPanel Orientation="Horizontal">
-                                    <materialDesign:PackIcon Kind="Chip" Width="14" Height="14" Foreground="White" VerticalAlignment="Center"/>
-                                    <TextBlock Text="{Binding CpuUsageText}" Foreground="White" FontSize="11" Margin="4,0,0,0"/>
-                                </StackPanel>
-                            </Border>
-                            
-                            <Border Background="{StaticResource AccentOrangeBrush}" CornerRadius="3" Padding="6,2" Margin="0,0,8,0">
-                                <StackPanel Orientation="Horizontal">
-                                    <materialDesign:PackIcon Kind="Memory" Width="14" Height="14" Foreground="White" VerticalAlignment="Center"/>
-                                    <TextBlock Text="{Binding RamUsageText}" Foreground="White" FontSize="11" Margin="4,0,0,0"/>
-                                </StackPanel>
-                            </Border>
-                            
-                            <Border Background="{StaticResource AccentRedBrush}" CornerRadius="3" Padding="6,2" Margin="0,0,8,0">
-                                <StackPanel Orientation="Horizontal">
-                                    <materialDesign:PackIcon Kind="Thermometer" Width="14" Height="14" Foreground="White" VerticalAlignment="Center"/>
-                                    <TextBlock Text="{Binding CpuTempText}" Foreground="White" FontSize="11" Margin="4,0,0,0"/>
-                                </StackPanel>
-                            </Border>
-                        </StackPanel>
-                    </StackPanel>
-
-                    <ProgressBar Grid.Column="1" Width="200" Height="4"
-                               IsIndeterminate="{Binding IsLoading}"
-                               Visibility="{Binding IsLoading, Converter={StaticResource BooleanToVisibilityConverter}}"
-                               Margin="16,0,0,0"/>
-                </Grid>
-            </materialDesign:Card>
         </Grid>
+
+        <!-- Rodapé com Status e Monitoramento -->
+        <materialDesign:Card Grid.Row="2" Margin="8,4,8,8" Background="{StaticResource DarkCardBrush}"
+                           materialDesign:ShadowAssist.ShadowDepth="Depth1">
+            <Grid Margin="16,8">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="Auto"/>
+                </Grid.ColumnDefinitions>
+
+                <StackPanel Grid.Column="0" Orientation="Horizontal">
+                    <TextBlock Text="{Binding StatusMessage, FallbackValue='Pronto'}"
+                             Style="{StaticResource MaterialDesignBody2TextBlock}"
+                             VerticalAlignment="Center" Margin="0,0,16,0"/>
+                    
+                    <!-- Monitoramento de Hardware -->
+                    <StackPanel Orientation="Horizontal" DataContext="{Binding HardwareMonitoring}">
+                        <Border Background="{StaticResource AccentGreenBrush}" CornerRadius="3" Padding="6,2" Margin="0,0,8,0">
+                            <StackPanel Orientation="Horizontal">
+                                <materialDesign:PackIcon Kind="Chip" Width="14" Height="14" Foreground="White" VerticalAlignment="Center"/>
+                                <TextBlock Text="{Binding CpuUsageText}" Foreground="White" FontSize="11" Margin="4,0,0,0"/>
+                            </StackPanel>
+                        </Border>
+                        
+                        <Border Background="{StaticResource AccentOrangeBrush}" CornerRadius="3" Padding="6,2" Margin="0,0,8,0">
+                            <StackPanel Orientation="Horizontal">
+                                <materialDesign:PackIcon Kind="Memory" Width="14" Height="14" Foreground="White" VerticalAlignment="Center"/>
+                                <TextBlock Text="{Binding RamUsageText}" Foreground="White" FontSize="11" Margin="4,0,0,0"/>
+                            </StackPanel>
+                        </Border>
+                        
+                        <Border Background="{StaticResource AccentRedBrush}" CornerRadius="3" Padding="6,2" Margin="0,0,8,0">
+                            <StackPanel Orientation="Horizontal">
+                                <materialDesign:PackIcon Kind="Thermometer" Width="14" Height="14" Foreground="White" VerticalAlignment="Center"/>
+                                <TextBlock Text="{Binding CpuTempText}" Foreground="White" FontSize="11" Margin="4,0,0,0"/>
+                            </StackPanel>
+                        </Border>
+                    </StackPanel>
+                </StackPanel>
+
+                <ProgressBar Grid.Column="1" Width="200" Height="4"
+                           IsIndeterminate="{Binding IsLoading}"
+                           Visibility="{Binding IsLoading, Converter={StaticResource BooleanToVisibilityConverter}}"
+                           Margin="16,0,0,0"/>
+            </Grid>
+        </materialDesign:Card>
     </Grid>
 </Window>

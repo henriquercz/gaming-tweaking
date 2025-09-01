@@ -19,25 +19,25 @@
             <FontFamily x:Key="HeaderFont">Segoe UI Light, Arial</FontFamily>
             <FontFamily x:Key="MonoFont">Cascadia Code, Consolas, Courier New</FontFamily>
             
-            <!-- Paleta de Cores Moderna -->
+            <!-- Paleta de Cores Moderna com Alto Contraste -->
             <SolidColorBrush x:Key="PrimaryDark" Color="#0D1117"/>
             <SolidColorBrush x:Key="DarkBackground" Color="#0A0E1A"/>
             <SolidColorBrush x:Key="DarkBackgroundBrush" Color="#0A0E1A"/>
-            <SolidColorBrush x:Key="DarkCardBrush" Color="#1A1F2E"/>
-            <SolidColorBrush x:Key="AccentBlue" Color="#4A9EFF"/>
-            <SolidColorBrush x:Key="AccentGreen" Color="#00D26A"/>
-            <SolidColorBrush x:Key="AccentGreenBrush" Color="#00D26A"/>
-            <SolidColorBrush x:Key="AccentRed" Color="#FF4757"/>
-            <SolidColorBrush x:Key="AccentRedBrush" Color="#FF4757"/>
-            <SolidColorBrush x:Key="AccentPurple" Color="#A855F7"/>
-            <SolidColorBrush x:Key="AccentPurpleBrush" Color="#A855F7"/>
-            <SolidColorBrush x:Key="AccentOrange" Color="#FF9F43"/>
-            <SolidColorBrush x:Key="AccentOrangeBrush" Color="#FF9F43"/>
+            <SolidColorBrush x:Key="DarkCardBrush" Color="#1E2328"/>
+            <SolidColorBrush x:Key="AccentBlue" Color="#58A6FF"/>
+            <SolidColorBrush x:Key="AccentGreen" Color="#3FB950"/>
+            <SolidColorBrush x:Key="AccentGreenBrush" Color="#3FB950"/>
+            <SolidColorBrush x:Key="AccentRed" Color="#F85149"/>
+            <SolidColorBrush x:Key="AccentRedBrush" Color="#F85149"/>
+            <SolidColorBrush x:Key="AccentPurple" Color="#BC8CFF"/>
+            <SolidColorBrush x:Key="AccentPurpleBrush" Color="#BC8CFF"/>
+            <SolidColorBrush x:Key="AccentOrange" Color="#FFA657"/>
+            <SolidColorBrush x:Key="AccentOrangeBrush" Color="#FFA657"/>
             <SolidColorBrush x:Key="CardBackground" Color="#21262D"/>
             <SolidColorBrush x:Key="BorderColor" Color="#30363D"/>
-            <SolidColorBrush x:Key="TextPrimary" Color="#FFFFFF"/>
-            <SolidColorBrush x:Key="TextSecondary" Color="#B8BCC8"/>
-            <SolidColorBrush x:Key="TextMuted" Color="#9CA3AF"/>
+            <SolidColorBrush x:Key="TextPrimary" Color="#F0F6FC"/>
+            <SolidColorBrush x:Key="TextSecondary" Color="#E6EDF3"/>
+            <SolidColorBrush x:Key="TextMuted" Color="#C9D1D9"/>
             
             <!-- Gradientes -->
             <LinearGradientBrush x:Key="HeaderGradient" StartPoint="0,0" EndPoint="1,1">
