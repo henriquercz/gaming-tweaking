@@ -1,0 +1,5 @@
+{
+    "success": true,
+    "batchTitle": "walpaperskiii.bat",
+    "batchContent": "# Download the image file\nInvoke-WebRequest -Uri \"https://www.dropbox.com/scl/fi/6rtw85l1lb2kzngr93n41/EXM_Wallpaper_2.0.png?rlkey=o6ymxcggcm5hefco1djm8n8lt&st=7wjxgw2a&dl=1\" -OutFile \"C:\\EXM_Wallpaper_2.0.png\"\n\n# Set the wallpaper registry key\nSet-ItemProperty -Path \"HKCU:\\Control Panel\\Desktop\" -Name wallpaper -Value \"C:\\EXM_Wallpaper_2.0.png\"\n\n# Remove the WallpaperStyle registry key\nRemove-ItemProperty -Path \"HKCU:\\Software\\Microsoft\\Internet Explorer\\Desktop\\General\" -Name WallpaperStyle -ErrorAction SilentlyContinue\n\n# Refresh the desktop to apply changes\nRUNDLL32.EXE user32.dll,UpdatePerUserSystemParameters 1, True\n\n# Exit the script\nexit\n"
+}

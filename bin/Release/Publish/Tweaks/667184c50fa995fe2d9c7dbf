@@ -1,0 +1,5 @@
+{
+    "success": true,
+    "batchTitle": "EnableMSIModeNV.bat",
+    "batchContent": "for /f %n in ('wmic path win32_videocontroller get PNPDeviceID ^| findstr /L \"VEN_\"') do (\nReg.exe add \"HKLM\\SYSTEM\\CurrentControlSet\\Enum\\%n\\Device Parameters\\Interrupt Management\\MessageSignaledInterruptProperties\" /v \"MSISupported\" /t REG_DWORD /d \"1\" /f\nReg.exe delete \"HKLM\\SYSTEM\\CurrentControlSet\\Enum\\%n\\Device Parameters\\Interrupt Management\\Affinity Policy\" /v \"DevicePriority\" /f\n)\nexit"
+}

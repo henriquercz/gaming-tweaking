@@ -1,0 +1,5 @@
+{
+    "success": true,
+    "batchTitle": "ClearLogFiles.bat",
+    "batchContent": "cd/\n\ncd windows\nReg.exe add \"HKLM\\SYSTEM\\CurrentControlSet\\Control\\Session Manager\\Memory Management\\PrefetchParameters\" /v \"EnablingPrefetcher\" /t REG_DWORD /d \"0\" /f\n\ndel *.log /a /s /q /f\n\nexit"
+}

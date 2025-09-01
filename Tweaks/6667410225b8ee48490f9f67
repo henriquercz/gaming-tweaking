@@ -1,0 +1,5 @@
+{
+    "success": true,
+    "batchTitle": "SoundAndRecordingSettings.bat",
+    "batchContent": "control mmsys.cpl sounds\nexit"
+}

@@ -1,0 +1,5 @@
+{
+    "success": true,
+    "batchTitle": "windowscleanmanager1.bat",
+    "batchContent": "start \"\" /wait \"C:\\Windows\\System32\\cleanmgr.exe\" /sagerun:50\nexit"
+}

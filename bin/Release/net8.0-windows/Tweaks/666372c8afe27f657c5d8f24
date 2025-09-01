@@ -1,0 +1,5 @@
+{
+    "success": true,
+    "batchTitle": "EnableDarkMode.bat",
+    "batchContent": "reg add HKCU\\Software\\Microsoft\\Windows\\CurrentVersion\\Themes\\Personalize /v AppsUseLightTheme /t REG_DWORD /d 0 /f\nreg add HKCU\\Software\\Microsoft\\Windows\\CurrentVersion\\Themes\\Personalize /v SystemUsesLightTheme /t REG_DWORD /d 0 /f\nexit\n\n\n"
+}

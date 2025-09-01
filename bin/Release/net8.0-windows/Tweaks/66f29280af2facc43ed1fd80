@@ -1,0 +1,5 @@
+{
+    "success": true,
+    "batchTitle": "Button16GB.bat",
+    "batchContent": "::16GB\n::::Disable Memory Compression\nPowerShell -Command \"Disable-MMAgent -MemoryCompression\" \nPowerShell -Command \"Disable-MMAgent -mc\"\nPowerShell -Command \"Disable-MMagent -apl\"\n::::Setting Best SvcHostSplitThresholdInKB for your ram size\nReg.exe add \"HKLM\\SYSTEM\\CurrentControlSet\\Control\" /v \"SvcHostSplitThresholdInKB\" /t REG_DWORD /d \"16777216\" /f \n\n::::Enabling Large System Cache\nReg.exe add \"HKLM\\SYSTEM\\CurrentControlSet\\Control\\Session Manager\\Memory Management\" /v \"LargeSystemCache\" /t REG_DWORD /d \"1\" /f\n\n::::Setting Best IoPageLockLimit for your ram size\nReg.exe add \"HKLM\\SYSTEM\\CurrentControlSet\\Control\\Session Manager\\Memory Management\" /v \"IoPageLockLimit\" /t REG_DWORD /d \"4194304\" /f\nexit"
+}

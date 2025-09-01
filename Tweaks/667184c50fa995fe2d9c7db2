@@ -1,0 +1,5 @@
+{
+    "success": true,
+    "batchTitle": "DisableLInkPowerManagement.bat",
+    "batchContent": "for /f \"tokens=*\" %i in ('reg query \"HKLM\\SYSTEM\\CurrentControlSet\\Enum\" /s /f \"StorPort\"^| findstr \"StorPort\"') do Reg.exe add \"%i\" /v \"EnableIdlePowerManagement\" /t REG_DWORD /d \"0\" /f\n    for %i in (EnableHIPM EnableDIPM EnableHDDParking) do for /f %a in ('reg query \"HKLM\\SYSTEM\\CurrentControlSet\\Services\" /s /f \"%i\" ^| findstr \"HKEY\"') do Reg.exe add \"%a\" /v \"%i\" /t REG_DWORD /d \"0\" /f\n\t)\nexit"
+}

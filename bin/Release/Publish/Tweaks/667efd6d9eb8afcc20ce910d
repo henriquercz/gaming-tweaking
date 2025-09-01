@@ -1,0 +1,5 @@
+{
+    "success": true,
+    "batchTitle": "EnableFSO.bat",
+    "batchContent": "Reg.exe add \"HKCU\\SYSTEM\\GameConfigStore\" /v \"GameDVR_DSEBehavior\" /t REG_DWORD /d \"0\" /f\nReg.exe add \"HKCU\\SYSTEM\\GameConfigStore\" /v \"GameDVR_FSEBehaviorMode\" /t REG_DWORD /d \"0\" /f\nReg.exe add \"HKCU\\SYSTEM\\GameConfigStore\" /v \"GameDVR_EFSEFeatureFlags\" /t REG_DWORD /d \"0\" /f\nReg.exe add \"HKCU\\SYSTEM\\GameConfigStore\" /v \"GameDVR_DXGIHonorFSEWindowsCompatible\" /t REG_DWORD /d \"0\" /f\nReg.exe add \"HKCU\\SYSTEM\\GameConfigStore\" /v \"GameDVR_HonorUserFSEBehaviorMode\" /t REG_DWORD /d \"1\" /f\n\nReg.exe add \"HKCU\\SOFTWARE\\Microsoft\\DirectX\\UserGpuPreferences\" /v \"DirectXUserGlobalSettings\" /t REG_SZ /d \"VRROptimizeEnabling=0;SwapEffectUpgradeEnabling=1;\" /f\n\nreg delete \"HKLM\\SOFTWARE\\Microsoft\\Windows\\Dwm\" /v \"OverlayTestMode\" /f\nexit"
+}

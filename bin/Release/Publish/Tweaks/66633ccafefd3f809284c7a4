@@ -1,0 +1,5 @@
+{
+    "success": true,
+    "batchTitle": "CleanDiscordCache.bat",
+    "batchContent": "taskkill /im discord.exe /f\nrd \"%AppData%\\Discord\\Cache\" /s /q\nrd \"%AppData%\\Discord\\Code Cache\" /s /q\nmd \"%AppData%\\Discord\\Cache\"\nmd \"%AppData%\\Discord\\Code Cache\"\necho.\nexit\n"
+}

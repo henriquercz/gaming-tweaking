@@ -1,0 +1,5 @@
+{
+    "success": true,
+    "batchTitle": "SoundRecorderRevert.ps1",
+    "batchContent": "Get-AppxPackage -AllUsers *Microsoft.WindowsSoundRecorder* | Foreach {Add-AppxPackage -DisableDevelopmentMode -Register \"$($_.InstallLocation)\\AppXManifest.xml\"}\n"
+}

@@ -1,0 +1,5 @@
+{
+    "success": true,
+    "batchTitle": "DisableAnimation.bat",
+    "batchContent": "%windir%\\system32\\SystemPropertiesPerformance.exe\nexit"
+}

@@ -1,0 +1,5 @@
+{
+    "success": true,
+    "batchTitle": "YourPhone.ps1",
+    "batchContent": "Get-AppxPackage *Microsoft.YourPhone* | Remove-AppxPackage"
+}

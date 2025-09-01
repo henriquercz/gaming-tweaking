@@ -1,0 +1,5 @@
+{
+    "success": true,
+    "batchTitle": "Messaging.ps1",
+    "batchContent": "Get-AppxPackage Microsoft.Messaging | Remove-AppxPackage\n"
+}

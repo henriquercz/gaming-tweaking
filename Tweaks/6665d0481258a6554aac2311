@@ -1,0 +1,5 @@
+{
+    "success": true,
+    "batchTitle": "StickyNotesRevert.ps1",
+    "batchContent": "Add-AppxPackage -register \"C:\\Program Files\\WindowsApps\\Microsoft.MicrosoftStickyNotes_6.0.2.0_x64__8wekyb3d8bbwe\\appxmanifest.xml\" -DisableDevelopmentMode\n\n"
+}

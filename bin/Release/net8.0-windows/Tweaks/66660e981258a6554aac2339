@@ -1,0 +1,5 @@
+{
+    "success": true,
+    "batchTitle": "Use Higher P-States on Lower C-States And Viseversa.BAT",
+    "batchContent": "powercfg -setacvalueindex scheme_current sub_processor IDLESCALING 1\npowercfg /setactive SCHEME_CURRENT\nexit"
+}

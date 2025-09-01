@@ -1,0 +1,5 @@
+{
+    "success": true,
+    "batchTitle": "Usb power.bat",
+    "batchContent": "reg add HKLM\\SYSTEM\\CurrentControlSet\\Services\\USB /v DisableSelectiveSuspend /t REG_DWORD /d 1 /f\npowercfg /SETDCVALUEINDEX SCHEME_CURRENT 2a737441-1930-4402-8d77-b2bebba308a3 48e6b7a6-50f5-4782-a5d4-53bb8f07e226 0\u200b\npowercfg /SETACVALUEINDEX SCHEME_CURRENT 2a737441-1930-4402-8d77-b2bebba308a3 48e6b7a6-50f5-4782-a5d4-53bb8f07e226 0\u200b\npowercfg -change -standby-timeout-dc 0\npowercfg -change -standby-timeout-ac 0\nexit"
+}

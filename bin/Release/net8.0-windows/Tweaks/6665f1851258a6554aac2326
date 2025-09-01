@@ -1,0 +1,5 @@
+{
+    "success": true,
+    "batchTitle": "WindowsMaps.ps1",
+    "batchContent": "Get-AppxPackage *Microsoft.WindowsMaps* | Remove-AppxPackage"
+}

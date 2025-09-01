@@ -1,0 +1,5 @@
+{
+    "success": true,
+    "batchTitle": "EnableOnBoardNetworkAdapter.bat",
+    "batchContent": "Reg.exe add \"HKLM\\SYSTEM\\CurrentControlSet\\Services\\Tcpip\\Parameters\\Interfaces\" /v \"DisableTaskOffload\" /t REG_DWORD /d \"0\" /f\nReg.exe add \"HKLM\\SYSTEM\\CurrentControlSet\\Services\\Tcpip\\Parameters\" /v \"DisableTaskOffload\" /t REG_DWORD /d \"0\" /f\nnetsh int ip set global taskoffload=disabled\nexit"
+}

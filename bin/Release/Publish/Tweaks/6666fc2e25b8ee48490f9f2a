@@ -1,0 +1,5 @@
+{
+    "success": true,
+    "batchTitle": "Hiddenusb.bat",
+    "batchContent": "Reg.exe add \"HKLM\\SYSTEM\\CurrentControlSet\\Control\\USB\\AutomaticSurpriseRemoval\" /v \"AttemptRecoveryFromUsbPowerDrain\" /t REG_DWORD /d \"0\" /f\nexit"
+}

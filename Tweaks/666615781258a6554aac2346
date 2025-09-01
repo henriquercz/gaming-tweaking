@@ -1,0 +1,5 @@
+{
+    "success": true,
+    "batchTitle": "DisableNetBIOS.bat",
+    "batchContent": "wmic nicconfig where TcpipNetbiosOptions=0 call SetTcpipNetbios 2\nexit"
+}

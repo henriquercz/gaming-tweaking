@@ -1,0 +1,5 @@
+{
+    "success": true,
+    "batchTitle": "FeedbackHubRevert.ps1",
+    "batchContent": "Get-AppxPackage -AllUsers *Microsoft.WindowsFeedbackHub* | Foreach {Add-AppxPackage -DisableDevelopmentMode -Register \"$($_.InstallLocation)\\AppXManifest.xml\"}\n"
+}

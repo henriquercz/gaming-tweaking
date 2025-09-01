@@ -1,0 +1,5 @@
+{
+    "success": true,
+    "batchTitle": "DisableBufferlistTracking.bat",
+    "batchContent": "Reg.exe add \"HKLM\\SYSTEM\\CurrentControlSet\\Services\\NDIS\\Parameters\" /v \"TrackNblOwner\" /t REG_DWORD /d \"0\" /f\nexit"
+}

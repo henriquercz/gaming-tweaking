@@ -1,0 +1,5 @@
+{
+    "success": true,
+    "batchTitle": "EnableAutotuning.bat",
+    "batchContent": "netsh int tcp set global autotuninglevel=enabled\nexit"
+}

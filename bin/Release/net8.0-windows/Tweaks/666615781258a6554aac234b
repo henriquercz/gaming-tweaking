@@ -1,0 +1,5 @@
+{
+    "success": true,
+    "batchTitle": "ResetNetwork.bat",
+    "batchContent": "ipconfig /release\nipconfig /renew\nipconfig /flushdns\nnetsh int ip reset\nnetsh int ipv4 reset\nnetsh int ipv6 reset\nnetsh int tcp reset\nnetsh winsock reset\nnetsh advfirewall reset\nnetsh branchcache reset\nnetsh http flush logbuffer\nexit"
+}

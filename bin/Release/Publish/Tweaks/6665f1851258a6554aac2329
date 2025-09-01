@@ -1,0 +1,5 @@
+{
+    "success": true,
+    "batchTitle": "ZuneMusic.ps1",
+    "batchContent": "Get-AppxPackage *Microsoft.ZuneMusic* | Remove-AppxPackage"
+}

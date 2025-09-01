@@ -1,0 +1,5 @@
+{
+    "success": true,
+    "batchTitle": "OneConnectRevert.ps1",
+    "batchContent": "Get-AppxPackage -AllUsers Microsoft.OneConnect | Foreach {Add-AppxPackage -DisableDevelopmentMode -Register \"$($_.InstallLocation)\\AppXManifest.xml\"}\n"
+}

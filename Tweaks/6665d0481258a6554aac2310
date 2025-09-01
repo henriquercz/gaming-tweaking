@@ -1,0 +1,5 @@
+{
+    "success": true,
+    "batchTitle": "StickyNotes.ps1",
+    "batchContent": "Get-AppxPackage *Microsoft.MicrosoftStickyNotes* | Remove-AppPackage\n\n\n\n\n"
+}

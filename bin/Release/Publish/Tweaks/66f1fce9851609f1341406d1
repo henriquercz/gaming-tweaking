@@ -1,0 +1,5 @@
+{
+    "success": true,
+    "batchTitle": "enableBluetooth.bat",
+    "batchContent": "Reg.exe add \"HKEY_LOCAL_MACHINE\\SYSTEM\\ControlSet001\\Services\\BTAGService\" /v \"Start\" /t REG_DWORD /d \"2\" /f\nReg.exe add \"HKEY_LOCAL_MACHINE\\SYSTEM\\ControlSet001\\Services\\bthserv\" /v \"Start\" /t REG_DWORD /d \"2\" /f\nReg.exe add \"HKEY_LOCAL_MACHINE\\SYSTEM\\ControlSet001\\Services\\BthAvctpSvc\" /v \"Start\" /t REG_DWORD /d \"2\" /f\nReg.exe add \"HKEY_LOCAL_MACHINE\\SYSTEM\\ControlSet001\\Services\\BluetoothUserService\" /v \"Start\" /t REG_DWORD /d \"2\" /f\nexit"
+}

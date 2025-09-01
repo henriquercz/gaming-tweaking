@@ -1,0 +1,5 @@
+{
+    "success": true,
+    "batchTitle": "DISABLEPAGECOMBINING.bat",
+    "batchContent": "PowerShell -Command \"Disable-MMAgent -PageCombining\" \nexit"
+}

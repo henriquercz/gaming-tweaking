@@ -1,0 +1,5 @@
+{
+    "success": true,
+    "batchTitle": "RestartNowButton.bat",
+    "batchContent": "shutdown /r\nexit"
+}

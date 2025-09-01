@@ -1,0 +1,5 @@
+{
+    "success": true,
+    "batchTitle": "SETMAXOPERATIONRATE.bat",
+    "batchContent": "PowerShell -Command \"Set-MMAgent -MaxOperationAPIFiles 2048\" \nexit"
+}

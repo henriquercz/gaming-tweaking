@@ -1,0 +1,5 @@
+{
+    "success": true,
+    "batchTitle": "DirectX.bat",
+    "batchContent": "Reg.exe add \"HKLM\\SOFTWARE\\Microsoft\\Direct3D\" /v \"DisableVidMemVBs\" /t REG_DWORD /d \"0\" /f\nReg.exe add \"HKLM\\SOFTWARE\\Microsoft\\Direct3D\" /v \"FlipNoVsync\" /t REG_DWORD /d \"1\" /f\nReg.exe add \"HKLM\\SOFTWARE\\Microsoft\\Direct3D\\Drivers\" /v \"SoftwareOnly\" /t REG_DWORD /d \"0\" /f\nReg.exe add \"HKLM\\SYSTEM\\CurrentControlSet\\Control\\GraphicsDrivers\" /v \"DpiMapIommuContiguous\" /t REG_DWORD /d \"1\" /f\nReg.exe add \"HKLM\\SYSTEM\\CurrentControlSet\\Control\\GraphicsDrivers\" /v \"HwSchedMode\" /t REG_DWORD /d \"2\" /f\nexit"
+}

@@ -1,0 +1,5 @@
+{
+    "success": true,
+    "batchTitle": "Enable All Processors.bat",
+    "batchContent": "set THREADS=%NUMBER_OF_PROCESSORS% & bcdedit /set {current} numproc %NUMBER_OF_PROCESSORS% \nexit"
+}

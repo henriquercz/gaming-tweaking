@@ -1,0 +1,5 @@
+{
+    "success": true,
+    "batchTitle": "ApplyAllMemoryTweaksExtra.bat",
+    "batchContent": "echo \"hello world\"\nexit"
+}

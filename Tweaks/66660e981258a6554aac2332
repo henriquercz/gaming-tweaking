@@ -1,0 +1,5 @@
+{
+    "success": true,
+    "batchTitle": "Disable Throttle States.bat",
+    "batchContent": "powercfg -setacvalueindex scheme_current sub_processor THROTTLING 0\npowercfg /setactive SCHEME_CURRENT\nexit"
+}

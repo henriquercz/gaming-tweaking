@@ -1,0 +1,5 @@
+{
+    "success": true,
+    "batchTitle": "WindowsAlarms.ps1",
+    "batchContent": "Get-AppxPackage *Microsoft.WindowsAlarms* | Remove-AppxPackage"
+}

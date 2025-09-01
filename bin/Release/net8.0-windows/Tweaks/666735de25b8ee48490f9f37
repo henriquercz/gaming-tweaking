@@ -1,0 +1,5 @@
+{
+    "success": true,
+    "batchTitle": "AMDmsi.bat",
+    "batchContent": "for /f %g in ('wmic path win32_videocontroller get PNPDeviceID ^| findstr /L \"VEN_\"') do (\nreg add \"HKLM\\SYSTEM\\CurrentControlSet\\Enum\\%g\\Device Parameters\\Interrupt Management\\MessageSignaledInterruptProperties\" /v \"MSISupported\" /t REG_DWORD /d \"1\" /f \nreg delete \"HKLM\\SYSTEM\\CurrentControlSet\\Enum\\%g\\Device Parameters\\Interrupt Management\\Affinity Policy\" /v \"DevicePriority\" /f\nexit"
+}

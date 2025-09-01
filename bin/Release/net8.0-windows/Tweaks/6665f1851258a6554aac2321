@@ -1,0 +1,5 @@
+{
+    "success": true,
+    "batchTitle": "Print3D.ps1",
+    "batchContent": "Get-AppxPackage *Microsoft.Print3D* | Remove-AppxPackage"
+}

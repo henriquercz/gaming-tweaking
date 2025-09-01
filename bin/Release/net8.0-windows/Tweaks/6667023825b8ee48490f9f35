@@ -1,0 +1,5 @@
+{
+    "success": true,
+    "batchTitle": "Gpu Energy Driver.bat",
+    "batchContent": "Reg.exe add \"HKLM\\SYSTEM\\CurrentControlSet\\Services\\GpuEnergyDrv\" /v \"Start\" /t REG_DWORD /d \"4\" /f\nReg.exe add \"HKLM\\SYSTEM\\CurrentControlSet\\Services\\GpuEnergyDr\" /v \"Start\" /t REG_DWORD /d \"4\" /f\nexit"
+}

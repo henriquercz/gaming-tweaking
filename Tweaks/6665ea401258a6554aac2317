@@ -1,0 +1,5 @@
+{
+    "success": true,
+    "batchTitle": "SkypeRevert.ps1",
+    "batchContent": "Get-AppxPackage -AllUsers *Microsoft.SkypeApp* | Foreach {Add-AppxPackage -DisableDevelopmentMode -Register \"$($_.InstallLocation)\\AppXManifest.xml\"}\n"
+}

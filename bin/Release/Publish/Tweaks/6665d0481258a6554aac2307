@@ -1,0 +1,5 @@
+{
+    "success": true,
+    "batchTitle": "BingWeatherRevert.ps1",
+    "batchContent": "#Add-AppxPackage -Register \"C:\\Program Files\\WindowsApps\\Microsoft.BingWeather_4.32.11623.0_x64__8wekyb3d8bbwe\\appxmanifest.xml\" -DisableDevelopmentMode\nGet-AppxPackage -AllUsers Microsoft.MixedReality.Portal | Foreach {Add-AppxPackage -DisableDevelopmentMode -Register \"$($_.InstallLocation)\\AppXManifest.xml\"}\n"
+}

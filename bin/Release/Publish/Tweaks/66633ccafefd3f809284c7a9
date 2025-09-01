@@ -1,0 +1,5 @@
+{
+    "success": true,
+    "batchTitle": "EmptyRecycleBin.bat",
+    "batchContent": "@echo off\necho Emptying Recycle Bin...\nrd /s /q C:\\$Recycle.Bin\nexit"
+}

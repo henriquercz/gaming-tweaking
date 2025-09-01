@@ -1,0 +1,5 @@
+{
+    "success": true,
+    "batchTitle": "MicrosoftSollitaire.ps1",
+    "batchContent": "Get-AppxPackage *Microsoft.MicrosoftSolitaireCollection* | Remove-AppPackage\n\n\n"
+}

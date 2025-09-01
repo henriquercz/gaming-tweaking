@@ -1,0 +1,5 @@
+{
+    "success": true,
+    "batchTitle": "Device Idle.bat",
+    "batchContent": "powercfg -setacvalueindex scheme_current sub_none DEVICEIDLE 0\npowercfg /setactive SCHEME_CURRENT\nexit"
+}

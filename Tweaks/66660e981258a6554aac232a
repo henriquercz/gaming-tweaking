@@ -1,0 +1,5 @@
+{
+    "success": true,
+    "batchTitle": "AC.bat",
+    "batchContent": "Powercfg -setdcvalueindex scheme_current sub_processor PROCTHROTTLEMAX 100\nPowercfg -setactive scheme_current\nPowercfg -setdcvalueindex scheme_current sub_processor PROCTHROTTLEMIN 50\nPowercfg -setactive scheme_current\nexit"
+}

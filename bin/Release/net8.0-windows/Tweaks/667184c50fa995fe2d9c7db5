@@ -1,0 +1,5 @@
+{
+    "success": true,
+    "batchTitle": "DisableNewsAndWeatherIcon.bat",
+    "batchContent": "REG ADD \"HKLM\\SOFTWARE\\Policies\\Microsoft\\Windows\\Windows Feeds\" /V EnableFeeds /T REG_DWORD /D 0 /F\nexit"
+}

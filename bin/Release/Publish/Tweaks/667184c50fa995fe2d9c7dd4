@@ -1,0 +1,5 @@
+{
+    "success": true,
+    "batchTitle": "SetTSCSyncPolicy.bat",
+    "batchContent": "bcdedit /set tscsyncpolicy legacy\nexit"
+}

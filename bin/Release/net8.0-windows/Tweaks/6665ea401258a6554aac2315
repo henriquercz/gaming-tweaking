@@ -1,0 +1,5 @@
+{
+    "success": true,
+    "batchTitle": "PeopleRevert.ps1",
+    "batchContent": "Get-AppxPackage -AllUsers *Microsoft.People* | Foreach {Add-AppxPackage -DisableDevelopmentMode -Register \"$($_.InstallLocation)\\AppXManifest.xml\"}\n"
+}

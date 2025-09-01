@@ -1,0 +1,5 @@
+{
+    "success": true,
+    "batchTitle": "EnableDirectCache.bat",
+    "batchContent": "netsh int tcp set global dca=enabled\nexit"
+}

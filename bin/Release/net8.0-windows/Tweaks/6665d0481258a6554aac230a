@@ -1,0 +1,5 @@
+{
+    "success": true,
+    "batchTitle": "GetStarted.ps1",
+    "batchContent": "Get-AppxPackage -allusers *Microsoft.GetStarted* | Remove-AppxPackage\n"
+}

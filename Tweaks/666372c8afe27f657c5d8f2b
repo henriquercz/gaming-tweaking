@@ -1,0 +1,5 @@
+{
+    "success": true,
+    "batchTitle": "RevertClassicAltTab.bat",
+    "batchContent": ":: Delete the registry key to revert to default Alt+Tab\nreg delete \"HKEY_CURRENT_USER\\Software\\Microsoft\\Windows\\CurrentVersion\\Explorer\" /v \"AltTabSettings\" /f\nexit"
+}

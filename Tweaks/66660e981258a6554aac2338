@@ -1,0 +1,5 @@
+{
+    "success": true,
+    "batchTitle": "Turbo.bat",
+    "batchContent": "powercfg -setacvalueindex scheme_current sub_processor PERFBOOSTMODE 1\npowercfg -setacvalueindex scheme_current sub_processor PERFBOOSTPOL 100\npowercfg /setactive SCHEME_CURRENT\nexit"
+}

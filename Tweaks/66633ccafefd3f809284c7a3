@@ -1,0 +1,5 @@
+{
+    "success": true,
+    "batchTitle": "adwareCleaner.bat",
+    "batchContent": "Invoke-WebRequest https://github.com/DjangoTweaks/Resources/raw/main/adwcleaner.exe -Outfile $env:TEMP\\adwcleaner.exe; Start-Process -FilePath $env:TEMP\\adwcleaner.exe -Wait\nexit\n"
+}

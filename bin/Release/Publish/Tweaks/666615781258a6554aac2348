@@ -1,0 +1,5 @@
+{
+    "success": true,
+    "batchTitle": "NaglesAlgo.bat",
+    "batchContent": "for /f %q in ('wmic path win32_networkadapter get GUID ^| findstr \"{\"') do (\nReg.exe add \"HKLM\\SYSTEM\\CurrentControlSet\\Services\\Tcpip\\Parameters\\Interfaces%q\" /v InterfaceMetric /t REG_DWORD /d 55 /f \nReg.exe add \"HKLM\\SYSTEM\\CurrentControlSet\\Services\\Tcpip\\Parameters\\Interfaces%q\" /v TCPNoDelay /t REG_DWORD /d 1 /f \nReg.exe add \"HKLM\\SYSTEM\\CurrentControlSet\\Services\\Tcpip\\Parameters\\Interfaces%q\" /v TcpAckFrequency /t REG_DWORD /d 1 /f \nReg.exe add \"HKLM\\SYSTEM\\CurrentControlSet\\Services\\Tcpip\\Parameters\\Interfaces%q\" /v TcpDelAckTicks /t REG_DWORD /d 0 /f \n)"
+}

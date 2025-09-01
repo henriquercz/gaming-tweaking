@@ -1,0 +1,5 @@
+{
+    "success": true,
+    "batchTitle": "Dont Restrict Core Boost.bat",
+    "batchContent": "powercfg -setacvalueindex scheme_current sub_processor PERFEPP 0\npowercfg /setactive SCHEME_CURRENT\nexit"
+}

@@ -1,0 +1,5 @@
+{
+    "success": true,
+    "batchTitle": "LowLatencyPowerScaling.bat",
+    "batchContent": "Reg.exe add \"HKLM\\SYSTEM\\CurrentControlSet\\Control\\Power\" /v \"LowLatencyScalingPercentage\" /t REG_DWORD /d \"100\" /f\nexit"
+}

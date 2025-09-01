@@ -1,0 +1,5 @@
+{
+    "success": true,
+    "batchTitle": "Cooling.bat",
+    "batchContent": "powercfg /setACvalueindex scheme_current SUB_PROCESSOR SYSCOOLPOL 1\npowercfg /setDCvalueindex scheme_current SUB_PROCESSOR SYSCOOLPOL 1\npowercfg /setactive SCHEME_CURRENT\nexit"
+}

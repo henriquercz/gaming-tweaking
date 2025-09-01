@@ -1,0 +1,5 @@
+{
+    "success": true,
+    "batchTitle": "3dBuilderRevert.ps1",
+    "batchContent": "Get-AppxPackage -AllUsers *Microsoft.3dBuilder* | Foreach {Add-AppxPackage -DisableDevelopmentMode -Register \"$($_.InstallLocation)\\AppXManifest.xml\"}\n"
+}

@@ -1,0 +1,5 @@
+{
+    "success": true,
+    "batchTitle": "DisableACPIDrivers.bat",
+    "batchContent": "sc config Ndu  start=disabled\nsc stop Ndu \nsc config NdisCap start=disabled\nsc stop NdisCap\nexit"
+}

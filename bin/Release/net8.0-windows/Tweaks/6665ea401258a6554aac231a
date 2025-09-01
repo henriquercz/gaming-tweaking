@@ -1,0 +1,5 @@
+{
+    "success": true,
+    "batchTitle": "WindowsCameraRevert.ps1",
+    "batchContent": "Get-AppxPackage -AllUsers *Microsoft.WindowsCamera* | Foreach {Add-AppxPackage -DisableDevelopmentMode -Register \"$($_.InstallLocation)\\AppXManifest.xml\"}\n"
+}

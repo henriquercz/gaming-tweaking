@@ -1,0 +1,5 @@
+{
+    "success": true,
+    "batchTitle": "EnableNumLockOnStartup.bat",
+    "batchContent": "Reg.exe add \"HKEY_USERS\\.DEFAULT\\Control Panel\\Keyboard\" /v InitialKeyboardIndicators /t REG_SZ /d \"2147483650\" /f\nReg.exe add \"HKCU\\Control Panel\\Keyboard\" /v \"KeyboardSpeed\" /t REG_SZ /d \"31\" /f\nReg.exe add \"HKEY_USERS\\.DEFAULT\\Control Panel\\Keyboard\" /v \"InitialKeyboardIndicators\" /t REG_SZ /d \"2\" /f\nReg.exe add \"HKCU\\Control Panel\\Keyboard\" /v \"InitialKeyboardIndicators\" /t REG_SZ /d \"2\" /f\nReg.exe add \"HKEY_USERS\\.DEFAULT\\Control Panel\\Keyboard\" /v \"KeyboardDelay\" /t REG_SZ /d \"0\" /f\nReg.exe add \"HKEY_USERS\\.DEFAULT\\Control Panel\\Keyboard\" /v \"KeyboardSpeed\" /t REG_SZ /d \"31\" /f\nexit"
+}

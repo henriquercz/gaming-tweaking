@@ -1,0 +1,5 @@
+{
+    "success": true,
+    "batchTitle": "NTFSButton_General.bat",
+    "batchContent": "fsutil behavior set memoryusage 2\nfsutil behavior set mftzone 4\nfsutil behavior set disablelastaccess 1\nfsutil behavior set disabledeletenotify 0\nfsutil behavior set encryptpagingfile 0\nexit"
+}

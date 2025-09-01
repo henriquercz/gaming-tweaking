@@ -1,0 +1,5 @@
+{
+    "success": true,
+    "batchTitle": "EnableWifiService.bat",
+    "batchContent": "sc config Wcmsvc start= auto\nsc config WlanSvc start= auto\nsc config NativeWifiP start= demand\nsc config NetSetupSvc start= demand\nsc config Netman start= demand\nsc config netprofm start= demand\nsc config NlaSvc start= auto\nsc config NcbService start= demand\nexit"
+}

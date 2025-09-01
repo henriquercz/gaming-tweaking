@@ -1,0 +1,5 @@
+{
+    "success": true,
+    "batchTitle": "WindowsCamera.ps1",
+    "batchContent": "Get-AppxPackage *Microsoft.WindowsCamera* | Remove-AppxPackage"
+}

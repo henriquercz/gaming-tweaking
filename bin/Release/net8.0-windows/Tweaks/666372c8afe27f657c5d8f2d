@@ -1,0 +1,5 @@
+{
+    "success": true,
+    "batchTitle": "TimeSync.bat",
+    "batchContent": "::timesync\nnet stop w32time\nw32tm /unregister\nw32tm /register\nw32tm /config /syncfromflags:manual /manualpeerlist:\"0.pool.ntp.org 1.pool.ntp.org 2.pool.ntp.org 3.pool.ntp.org\" /reliable:YES\nnet start w32time\nw32tm /config /update\nw32tm /resync /rediscover\nexit"
+}

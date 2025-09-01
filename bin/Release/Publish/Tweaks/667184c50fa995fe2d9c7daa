@@ -1,0 +1,5 @@
+{
+    "success": true,
+    "batchTitle": "AdvancedNetworkTweaks.bat",
+    "batchContent": "netsh int tcp set global ecncapability=disabled\n\n\nnetsh int tcp set global netdma=enabled\n\n\nnetsh int tcp set global rsc=disabled\n\n\n\n\nnetsh int tcp set global timestamps=disabled \n\n\nnetsh int tcp set global initialRto=2000\n\n\nnetsh interface ipv4 set subinterface \u201cEthernet\u201d mtu=1500 store=persistent\n\n\nnetsh int tcp set global nonsackrttresiliency=disabled \n\n\nnetsh int tcp set global maxsynretransmissions=2\n\n\nnetsh int tcp set security mpp=disabled\n\n\nnetsh int tcp set security profiles=disabled\n\n\nnetsh int ip set global neighborcachelimit=4096\n\n\nnetsh int tcp set supplemental Internet congestionprovider=ctcp\n\n\nnetsh int isatap set state disabled\nexit"
+}

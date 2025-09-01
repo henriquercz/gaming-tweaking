@@ -1,0 +1,5 @@
+{
+    "success": true,
+    "batchTitle": "People.ps1",
+    "batchContent": "Get-AppxPackage *Microsoft.People* | Remove-AppxPackage"
+}

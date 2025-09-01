@@ -1,0 +1,5 @@
+{
+    "success": true,
+    "batchTitle": "NetPowerSavingsDisable.bat",
+    "batchContent": "PowerShell Disable-NetAdapterLso -Name \"*\"\n\npowershell \"ForEach($adapter In Get-NetAdapter){Disable-NetAdapterPowerManagement -Name $adapter.Name -ErrorAction SilentlyContinue}\"\n\npowershell \"ForEach($adapter In Get-NetAdapter){Disable-NetAdapterLso -Name $adapter.Name -ErrorAction SilentlyContinue}\"\n\nPOWERSHELL Disable-NetAdapterPowerManagement -Name \"*\" -ErrorAction SilentlyContinue\n\nReg.exe add \"HKLM\\SOFTWARE\\Policies\\Microsoft\\Windows\\WcmSvc\\GroupPolicy\" /v \"fDisablePowerManagement\" /t REG_DWORD /d \"1\" /f\n\nexit"
+}

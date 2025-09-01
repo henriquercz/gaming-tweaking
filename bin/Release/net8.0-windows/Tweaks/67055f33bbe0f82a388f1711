@@ -1,0 +1,5 @@
+{
+    "success": true,
+    "batchTitle": "EnableSubMitigations.bat",
+    "batchContent": "reg delete \"HKLM\\SYSTEM\\CurrentControlSet\\Control\\Session Manager\\kernel\" /v \"MitigationOptions\" /f \nexit"
+}

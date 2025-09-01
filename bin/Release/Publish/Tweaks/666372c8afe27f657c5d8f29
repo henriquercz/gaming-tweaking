@@ -1,0 +1,5 @@
+{
+    "success": true,
+    "batchTitle": "OptimizeAudio.bat",
+    "batchContent": "control mmsys.cpl sounds\n"
+}

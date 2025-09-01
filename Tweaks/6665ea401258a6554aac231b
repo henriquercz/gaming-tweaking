@@ -1,0 +1,5 @@
+{
+    "success": true,
+    "batchTitle": "WindowsMapsRevert.ps1",
+    "batchContent": "Get-AppxPackage -AllUsers *Microsoft.WindowsMaps* | Foreach {Add-AppxPackage -DisableDevelopmentMode -Register \"$($_.InstallLocation)\\AppXManifest.xml\"}\n"
+}

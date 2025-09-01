@@ -1,0 +1,5 @@
+{
+    "success": true,
+    "batchTitle": "PSTATE.BAT",
+    "batchContent": "powercfg -setacvalueindex scheme_current sub_processor PERFAUTONOMOUS 1\npowercfg -setacvalueindex scheme_current sub_processor PERFAUTONOMOUSWINDOW 20000\npowercfg -setacvalueindex scheme_current sub_processor PERFCHECK 20\nPowercfg -setactive scheme_current\nexit"
+}

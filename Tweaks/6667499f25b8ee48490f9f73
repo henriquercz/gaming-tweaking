@@ -1,0 +1,5 @@
+{
+    "success": true,
+    "batchTitle": "HardenSMB.ps",
+    "batchContent": "Disable-WindowsOptionalFeature -Online -FeatureName SMB1Protocol -NoRestart\nDisable-WindowsOptionalFeature -Online -FeatureName SMB1Protocol-Client -NoRestart\nDisable-WindowsOptionalFeature -Online -FeatureName SMB1Protocol-Server -NoRestart\n\nSet-SmbClientConfiguration -RequireSecuritySignature $True -Force\nSet-SmbClientConfiguration -EnableSecuritySignature $True -Force\nSet-SmbServerConfiguration -EncryptData $True -Force\nSet-SmbServerConfiguration -EnableSMB1Protocol $false -Force\nexit\n"
+}

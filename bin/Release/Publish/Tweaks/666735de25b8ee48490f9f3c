@@ -1,0 +1,5 @@
+{
+    "success": true,
+    "batchTitle": "disable nvidia telm.bat",
+    "batchContent": "reg delete \"HKLM\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Run\" /v \"NvBackend\" /f \nreg add \"HKLM\\SOFTWARE\\NVIDIA Corporation\\NvControlPanel2\\Client\" /v \"OptInOrOutPreference\" /t REG_DWORD /d \"0\" /f \nschtasks /change /disable /tn \"NvTmRep_CrashReport1_{B2FE1952-0186-46C3-BAEC-A80AA35AC5B8}\" \nschtasks /change /disable /tn \"NvTmRep_CrashReport2_{B2FE1952-0186-46C3-BAEC-A80AA35AC5B8}\" \nschtasks /change /disable /tn \"NvTmRep_CrashReport3_{B2FE1952-0186-46C3-BAEC-A80AA35AC5B8}\" \nschtasks /change /disable /tn \"NvTmRep_CrashReport4_{B2FE1952-0186-46C3-BAEC-A80AA35AC5B8}\" \nschtasks /change /disable /tn \"NvDriverUpdateCheckDaily_{B2FE1952-0186-46C3-BAEC-A80AA35AC5B8}\" \nschtasks /change /disable /tn \"NVIDIA GeForce Experience SelfUpdate_{B2FE1952-0186-46C3-BAEC-A80AA35AC5B8}\" \nschtasks /change /disable /tn \"NvTmMon_{B2FE1952-0186-46C3-BAEC-A80AA35AC5B8}\" \nexit"
+}

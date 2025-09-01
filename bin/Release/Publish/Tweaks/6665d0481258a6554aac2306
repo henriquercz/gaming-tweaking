@@ -1,0 +1,5 @@
+{
+    "success": true,
+    "batchTitle": "BingWeather.ps1",
+    "batchContent": "Get-AppxPackage -allusers *Microsoft.BingWeather* | Remove-AppxPackage"
+}

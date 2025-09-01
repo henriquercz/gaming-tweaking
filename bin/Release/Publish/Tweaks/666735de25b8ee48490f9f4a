@@ -1,0 +1,5 @@
+{
+    "success": true,
+    "batchTitle": "hdcp.bat",
+    "batchContent": "for /f %m in ('wmic path Win32_VideoController get PNPDeviceID^| findstr /L \"PCI\\VEN_\"') do (\n    for /f \"tokens=3\" %a in ('reg query \"HKEY_LOCAL_MACHINE\\SYSTEM\\ControlSet001\\Enum\\%m\" /v \"Driver\"') do (\n        for /f %m in ('echo  %a ^| findstr \"{\"') do (\n            Reg.exe add \"HKEY_LOCAL_MACHINE\\SYSTEM\\ControlSet001\\Control\\Class\\%m\" /v \"RMHdcpKeyglobZero\" /t REG_DWORD /d \"1\" /f \n        )\n    )\n)\nexit"
+}

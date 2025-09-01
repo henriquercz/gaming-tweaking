@@ -1,0 +1,5 @@
+{
+    "success": true,
+    "batchTitle": "EnableSmartScreen.bat",
+    "batchContent": "Reg.exe add \"HKLM\\SOFTWARE\\Policies\\Microsoft\\Windows\\System\" /v \"EnablingSmartScreen\" /t REG_DWORD /d \"1\" /f \nReg.exe add \"HKLM\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Explorer\" /v \"SmartScreenEnabled\" /t REG_SZ /d \"On\" /f \nReg.exe add \"HKLM\\SOFTWARE\\Policies\\Microsoft\\Windows\\System\" /v \"EnableSmartScreen\" /t REG_DWORD /d \"1\" /f \nReg.exe add \"HKLM\\SOFTWARE\\Policies\\Microsoft\\MicrosoftEdge\\PhishingFilter\" /v \"DontReportInfectionInformation\" /t REG_DWORD /d \"1\" /f \nReg.exe add \"HKLM\\SOFTWARE\\Policies\\Microsoft\\Windows Defender\\SmartScreen\" /v \"ConfigureAppInstallControlEnabled\" /t REG_DWORD /d \"1\" /f\nexit"
+}

@@ -1,0 +1,5 @@
+{
+    "success": true,
+    "batchTitle": "INCREASEPAGEDPOOLMEMORY.bat",
+    "batchContent": "Fsutil behavior query memoryusage\nFsutil behavior set memoryusage 2\nFsutil behavior set mftzone 2 \nexit"
+}

@@ -1,0 +1,5 @@
+{
+    "success": true,
+    "batchTitle": "Disable C states.bat",
+    "batchContent": "Reg.exe add \"HKLM\\SYSTEM\\CurrentControlSet\\Control\\Processor\" /v \"Cstates\" /t REG_DWORD /d \"0\" /f\nReg.exe add \"HKLM\\SYSTEM\\CurrentControlSet\\Control\\Processor\" /v \"Capabilities\" /t REG_DWORD /d \"516198\" /f\npowercfg -setacvalueindex scheme_current SUB_SLEEP AWAYMODE 0\npowercfg -setacvalueindex scheme_current SUB_SLEEP ALLOWSTANDBY 0\npowercfg -setacvalueindex scheme_current SUB_SLEEP HYBRIDSLEEP 0\npowercfg -setacvalueindex scheme_current sub_processor PROCTHROTTLEMIN 100\npowercfg /setactive SCHEME_CURRENT\nexit\n\n"
+}

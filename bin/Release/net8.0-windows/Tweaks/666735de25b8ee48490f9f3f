@@ -1,0 +1,5 @@
+{
+    "success": true,
+    "batchTitle": "DisableDMA.bat",
+    "batchContent": "Reg.exe add \"HKLM\\SYSTEM\\Control\\Class{4d36e968-e325-11ce-bfc1-08002be10318}\\0000\\UMD\" /v \"FlipQueueSize\" /t REG_BINARY /d \"3100\" /f \nexit"
+}

@@ -1,0 +1,5 @@
+{
+    "success": true,
+    "batchTitle": "WindowsFeedbackHub.ps1",
+    "batchContent": "Get-AppxPackage *Microsoft.WindowsFeedbackHub* | Remove-AppxPackage"
+}

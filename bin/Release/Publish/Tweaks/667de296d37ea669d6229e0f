@@ -1,0 +1,5 @@
+{
+    "success": true,
+    "batchTitle": "DisableCoreIsolation.bat",
+    "batchContent": "bcdedit /set vsmlaunchtype Off\nbcdedit /set vm No\nReg.exe add \"HKLM\\Software\\Policies\\Microsoft\\Windows\\DeviceGuard\" /v \"EnableVirtualizationBasedSecurity\" /t REG_DWORD /d \"0\" /f\nReg.exe add \"HKLM\\Software\\Policies\\Microsoft\\Windows\\DeviceGuard\" /v \"HVCIMATRequired\" /t REG_DWORD /d \"0\" /f\nexit"
+}

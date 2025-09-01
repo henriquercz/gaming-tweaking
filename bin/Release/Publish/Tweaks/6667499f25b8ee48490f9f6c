@@ -1,0 +1,5 @@
+{
+    "success": true,
+    "batchTitle": "BCD.bat",
+    "batchContent": "bcdedit /set configaccesspolicy default\nbcdedit /set MSI default\nbcdedit /set usephysicaldestination no\nbcdedit /set usefirmwarepcisettings no\nbcdedit /deletevalue useplatformtick >nul 2>&1 \nbcdedit /deletevalue useplatformclockJ >nul 2>&1 \nbcdedit /set disabledynamictick yes\nbcdedit /set ems no\nbcdedit /set bootems no\nbcdedit /set vm no\nbcdedit /set sos no\nbcdedit /set quietboot yes\nbcdedit /set integrityservices disable\nbcdedit /set bootux disabled\nbcdedit /set bootlog no\nbcdedit /set tpmbootentropy ForceDisable\nbcdedit /set disableelamdrivers yes\nbcdedit /set hypervisorlaunchtype off\nbcdedit /set isolatedcontext no\nbcdedit /set pae ForceDisable\nbcdedit /set vsmlaunchtype off\n\nexit"
+}

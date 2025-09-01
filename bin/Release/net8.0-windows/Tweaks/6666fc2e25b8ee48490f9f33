@@ -1,0 +1,5 @@
+{
+    "success": true,
+    "batchTitle": "throttoling.bat",
+    "batchContent": "Reg.exe add \"HKLM\\SYSTEM\\CurrentControlSet\\Control\\Power\" /v \"PlatformAoAcOverride\" /t REG_DWORD /d \"0\" /f\nReg.exe add \"HKLM\\SYSTEM\\CurrentControlSet\\Control\\Power\" /v \"EventProcessorEnabled\" /t REG_DWORD /d \"0\" /f\nReg.exe add \"HKLM\\SYSTEM\\CurrentControlSet\\Control\\Power\" /v \"CsEnabled\" /t REG_DWORD /d \"0\" /f\nReg.exe add \"HKLM\\SYSTEM\\CurrentControlSet\\Control\\Power\\PowerThrottling\" /v \"PowerThrottlingOff\" /t REG_DWORD /d \"1\" /f\nexit"
+}

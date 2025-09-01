@@ -1,0 +1,5 @@
+{
+    "success": true,
+    "batchTitle": "Print3DRevert.ps1",
+    "batchContent": "Get-AppxPackage -AllUsers *Microsoft.Print3D* | Foreach {Add-AppxPackage -DisableDevelopmentMode -Register \"$($_.InstallLocation)\\AppXManifest.xml\"}\n"
+}

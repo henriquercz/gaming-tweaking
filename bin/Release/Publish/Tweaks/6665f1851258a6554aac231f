@@ -1,0 +1,5 @@
+{
+    "success": true,
+    "batchTitle": "OneConnect.ps1",
+    "batchContent": "Get-AppxPackage *Microsoft.OneConnect* | Remove-AppPackage\n\n"
+}

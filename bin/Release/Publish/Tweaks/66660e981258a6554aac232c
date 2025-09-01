@@ -1,0 +1,5 @@
+{
+    "success": true,
+    "batchTitle": "Away.bat",
+    "batchContent": "powercfg -setacvalueindex scheme_current SUB_SLEEP AWAYMODE 0\npowercfg -setacvalueindex scheme_current SUB_SLEEP ALLOWSTANDBY 0\npowercfg -setacvalueindex scheme_current SUB_SLEEP HYBRIDSLEEP 0\npowercfg -setacvalueindex scheme_current sub_processor PROCTHROTTLEMIN 100\npowercfg /setactive SCHEME_CURRENT\nexit"
+}

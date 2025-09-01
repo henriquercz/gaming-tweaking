@@ -1,0 +1,5 @@
+{
+    "success": true,
+    "batchTitle": "LatencyDriver.bat",
+    "batchContent": "FOR /F \"eol=E\" %a in ('REG QUERY \"HKLM\\System\\CurrentControlSet\\Services\" /S /F \"IoLatencyCap\"^| FINDSTR /V \"IoLatencyCap\"') DO (\nReg.exe add \"%a\" /v \"IoLatencyCap\" /t REG_DWORD /d \"0\" /f\nFOR /F \"tokens=*\" %z IN (\"%a\") DO (\nSET STR=%z\nSET STR=!STR:HKLM\\System\\CurrentControlSet\\services\\=!\nSET STR=!STR:\\Parameters=!\n)\n)\nexit"
+}

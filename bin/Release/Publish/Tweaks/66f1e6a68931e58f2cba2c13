@@ -1,0 +1,5 @@
+{
+    "success": true,
+    "batchTitle": "DisableWindowsCoPilot.bat",
+    "batchContent": "PowerShell -ExecutionPolicy Unrestricted -Command \"$data = '1'; reg add 'HKLM\\SOFTWARE\\Policies\\Microsoft\\Windows\\WindowsCopilot' /v 'TurnOffWindowsCopilot' /t 'REG_DWORD' /d \"^\"\"$data\"^\"\" /f\"\nPowerShell -ExecutionPolicy Unrestricted -Command \"$data = '1'; reg add 'HKCU\\SOFTWARE\\Policies\\Microsoft\\Windows\\WindowsCopilot' /v 'TurnOffWindowsCopilot' /t 'REG_DWORD' /d \"^\"\"$data\"^\"\" /f\"\nPowerShell -ExecutionPolicy Unrestricted -Command \"$data = '0'; reg add 'HKCU\\Software\\Microsoft\\Windows\\Shell\\Copilot\\BingChat' /v 'IsUserEligible' /t 'REG_DWORD' /d \"^\"\"$data\"^\"\" /f\"\nPowerShell -ExecutionPolicy Unrestricted -Command \"$data = '0'; reg add 'HKCU\\Software\\Microsoft\\Windows\\CurrentVersion\\Notifications\\Settings' /v 'AutoOpenCopilotLargeScreens' /t 'REG_DWORD' /d \"^\"\"$data\"^\"\" /f\"\nPowerShell -ExecutionPolicy Unrestricted -Command \"$data = '0'; reg add 'HKCU\\Software\\Microsoft\\Windows\\CurrentVersion\\Explorer\\Advanced' /v 'ShowCopilotButton' /t 'REG_DWORD' /d \"^\"\"$data\"^\"\" /f\""
+}

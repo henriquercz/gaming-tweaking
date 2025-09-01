@@ -1,0 +1,5 @@
+{
+    "success": true,
+    "batchTitle": "OPTIMIZEHDCFBTHRESHOLD.bat",
+    "batchContent": "reg add \"HKLM\\System\\CurrentControlSet\\Control\\Session Manager\" /v \"HeapDeCommitFreeBlockThreshold\" /t REG_DWORD /d \"262144\" /f \nexit"
+}

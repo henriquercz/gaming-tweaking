@@ -1,0 +1,5 @@
+{
+    "success": true,
+    "batchTitle": "DisableIMELogging.bat",
+    "batchContent": "reg add \"HKEY_LOCAL_MACHINE\\SOFTWARE\\Microsoft\\PolicyManager\\default\\TextInput\\AllowIMELogging\" /v \"value\" /t REG_DWORD /d 0 /f\nreg add \"HKEY_LOCAL_MACHINE\\software\\policies\\microsoft\\ime\\shared\" /v \"UserDict\" /t REG_DWORD /d 0 /f\nreg add \"HKEY_LOCAL_MACHINE\\software\\policies\\microsoft\\ime\\shared\" /v \"UseHistorybasedPredictiveInput\" /t REG_DWORD /d 0 /f\nreg add \"HKEY_LOCAL_MACHINE\\software\\policies\\microsoft\\ime\\shared\" /v \"Enable Cloud Candidate\" /t REG_SZ /d \"0\" /f\nreg add \"HKEY_LOCAL_MACHINE\\software\\policies\\microsoft\\ime\\shared\" /v \"Enable Lexicon Update\" /t REG_SZ /d \"0\" /f\nreg add \"HKEY_LOCAL_MACHINE\\software\\policies\\microsoft\\ime\\shared\" /v \"misconvlogging\" /t REG_DWORD /d 0 /f\nexit"
+}

@@ -1,0 +1,5 @@
+{
+    "success": true,
+    "batchTitle": "3Dviewer.ps1",
+    "batchContent": "Get-AppxPackage *Microsoft.Microsoft3DViewer* | Remove-AppxPackage"
+}

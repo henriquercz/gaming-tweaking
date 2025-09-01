@@ -1,0 +1,5 @@
+{
+    "success": true,
+    "batchTitle": "DisableDiagnostics.bat",
+    "batchContent": "sc config DiagTrack start= disabled \nsc config dmwappushservice start= disabled\nsc config DPS start= disabled \nsc config diagnosticshub.standardcollector.service start= disabled \nschtasks /change /tn \"\\Microsoft\\Windows\\Application Experience\\StartupAppTask\" /disable\nschtasks /end /tn \"\\Microsoft\\Windows\\DiskDiagnostic\\Microsoft-Windows-DiskDiagnosticDataCollector\"\nschtasks /change /tn \"\\Microsoft\\Windows\\DiskDiagnostic\\Microsoft-Windows-DiskDiagnosticDataCollector\" /disable\nschtasks /end /tn \"\\Microsoft\\Windows\\DiskDiagnostic\\Microsoft-Windows-DiskDiagnosticResolver\"\nschtasks /change /tn \"\\Microsoft\\Windows\\DiskDiagnostic\\Microsoft-Windows-DiskDiagnosticResolver\" /disable\nschtasks /end /tn \"\\Microsoft\\Windows\\Power Efficiency Diagnostics\\AnalyzeSystem\"\nschtasks /change /tn \"\\Microsoft\\Windows\\Power Efficiency Diagnostics\\AnalyzeSystem\" /disable\nexit"
+}

@@ -1,0 +1,5 @@
+{
+    "success": true,
+    "batchTitle": "WindowsSoundRecorder.ps1",
+    "batchContent": "Get-AppxPackage *Microsoft.WindowsSoundRecorder* | Remove-AppxPackage"
+}

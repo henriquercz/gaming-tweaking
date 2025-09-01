@@ -1,0 +1,5 @@
+{
+    "success": true,
+    "batchTitle": "MicrosoftSollitaireRevert.ps1",
+    "batchContent": "Add-AppxPackage -register \"C:\\Program Files\\WindowsApps\\Microsoft.MicrosoftSolitaireCollection_4.19.1262.0_x64__8wekyb3d8bbwe\\appxmanifest.xml\" -DisableDevelopmentMode"
+}

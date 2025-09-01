@@ -1,0 +1,5 @@
+{
+    "success": true,
+    "batchTitle": "DisableLazyMode.bat",
+    "batchContent": "Reg.exe add \"HKLM\\SOFTWARE\\Microsoft\\Windows NT\\CurrentVersion\\Multimedia\\SystemProfile\" /v \"NoLazyMode\" /t REG_DWORD /d \"1\" /f\nReg.exe add \"HKLM\\SOFTWARE\\Microsoft\\Windows NT\\CurrentVersion\\Multimedia\\SystemProfile\" /v \"AlwaysOn\" /t REG_DWORD /d \"1\" /f\nexit"
+}

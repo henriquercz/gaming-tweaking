@@ -1,0 +1,5 @@
+{
+    "success": true,
+    "batchTitle": "BiosTweaks.bat",
+    "batchContent": "\nReg.exe add \"HKLM\\System\\CurrentControlSet\\Services\\VxD\\BIOS\" /v \"CPUPriority\" /t REG_DWORD /d \"1\" /f\nReg.exe add \"HKLM\\System\\CurrentControlSet\\Services\\VxD\\BIOS\" /v \"FastDRAM\" /t REG_DWORD /d \"1\" /f\nReg.exe add \"HKLM\\System\\CurrentControlSet\\Services\\VxD\\BIOS\" /v \"AGPConcur\" /t REG_DWORD /d \"1\" /f\nReg.exe add \"HKLM\\System\\CurrentControlSet\\Services\\VxD\\BIOS\" /v \"CPUPriority\" /t REG_DWORD /d \"1\" /f\nReg.exe add \"HKLM\\System\\CurrentControlSet\\Services\\VxD\\BIOS\" /v \"FastDRAM\" /t REG_DWORD /d \"1\" /f\nReg.exe add \"HKLM\\System\\CurrentControlSet\\Services\\VxD\\BIOS\" /v \"PCIConcur\" /t REG_DWORD /d \"1\" /f\n\nbcdedit /set linearaddress57 OptOut\nbcdedit /set increaseuserva 268435328\n\n\nexit"
+}

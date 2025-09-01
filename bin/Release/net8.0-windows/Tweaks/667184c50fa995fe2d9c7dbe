@@ -1,0 +1,5 @@
+{
+    "success": true,
+    "batchTitle": "EnableMEMMapping.bat",
+    "batchContent": "bcdedit /set configaccesspolicy Default\nbcdedit /set MSI Default\nbcdedit /set usephysicaldestination No\nbcdedit /set usefirmwarepcisettings No\nexit"
+}

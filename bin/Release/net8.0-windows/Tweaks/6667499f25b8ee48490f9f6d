@@ -1,0 +1,5 @@
+{
+    "success": true,
+    "batchTitle": "BCDRev.bat",
+    "batchContent": "bcdedit /deletevalue configaccesspolicy \nbcdedit /deletevalue MSI \nbcdedit /deletevalue usephysicaldestination \nbcdedit /deletevalue usefirmwarepcisettings \nbcdedit /deletevalue useplatformtick\nbcdedit /deletevalue useplatformclockJ \nbcdedit /deletevalue disabledynamictick\nbcdedit /deletevalue tscsyncpolicy \nbcdedit /deletevalue x2apicpolicy \nbcdedit /deletevalue ems \nbcdedit /deletevalue bootems \nbcdedit /deletevalue vm \nbcdedit /deletevalue sos \nbcdedit /deletevalue quietboot \nbcdedit /deletevalue integrityservices\nbcdedit /deletevalue bootux \nbcdedit /deletevalue bootlog \nbcdedit /deletevalue tpmbootentropy \nbcdedit /deletevalue disableelamdrivers\nbcdedit /deletevalue hypervisorlaunchtype \nbcdedit /deletevalue isolatedcontext \nbcdedit /deletevalue pae \nbcdedit /deletevalue vsmlaunchtype\nexit"
+}

@@ -1,0 +1,5 @@
+{
+    "success": true,
+    "batchTitle": "NVMePowerStateTLT.bat",
+    "batchContent": "powercfg -setacvalueindex scheme_current SUB_DISK dbc9e238-6de9-49e3-92cd-8c2b4946b472 1\npowercfg -setacvalueindex scheme_current SUB_DISK fc95af4d-40e7-4b6d-835a-56d131dbc80e 1\nexit"
+}

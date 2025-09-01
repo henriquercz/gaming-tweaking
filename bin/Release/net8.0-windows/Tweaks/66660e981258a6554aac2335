@@ -1,0 +1,5 @@
+{
+    "success": true,
+    "batchTitle": "Fix Stock Cpu Speed.bat",
+    "batchContent": "Reg.exe add \"HKLM\\SYSTEM\\CurrentControlSet\\Services\\IntelPPM\" /v Start /t REG_DWORD /d 3 /f\nReg.exe add \"HKLM\\SYSTEM\\CurrentControlSet\\Services\\AmdPPM\" /v Start /t REG_DWORD /d 3 /f\nexit"
+}

@@ -1,0 +1,5 @@
+{
+    "success": true,
+    "batchTitle": "OptimizeLanManServer.bat",
+    "batchContent": "Reg.exe add \"HKLM\\SYSTEM\\CurrentControlSet\\services\\LanmanServer\\Parameters\" /v \"autodisconnect\" /t REG_DWORD /d \"4294967295\" /f \nReg.exe add \"HKLM\\SYSTEM\\CurrentControlSet\\services\\LanmanServer\\Parameters\" /v \"Size\" /t REG_DWORD /d \"3\" /f \nReg.exe add \"HKLM\\SYSTEM\\CurrentControlSet\\services\\LanmanServer\\Parameters\" /v \"EnableOplocks\" /t REG_DWORD /d \"0\" /f \nReg.exe add \"HKLM\\SYSTEM\\CurrentControlSet\\services\\LanmanServer\\Parameters\" /v \"IRPStackSize\" /t REG_DWORD /d \"20\" /f \nReg.exe add \"HKLM\\SYSTEM\\CurrentControlSet\\services\\LanmanServer\\Parameters\" /v \"SharingViolationDelay\" /t REG_DWORD /d \"0\" /f \nReg.exe add \"HKLM\\SYSTEM\\CurrentControlSet\\services\\LanmanServer\\Parameters\" /v \"SharingViolationRetries\" /t REG_DWORD /d \"0\" /f \nexit"
+}

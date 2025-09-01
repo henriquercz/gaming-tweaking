@@ -1,0 +1,5 @@
+{
+    "success": true,
+    "batchTitle": "DisableTeredo.bat",
+    "batchContent": "netsh interface teredo set state disabled \nexit"
+}

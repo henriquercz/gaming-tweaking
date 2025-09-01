@@ -1,0 +1,5 @@
+{
+    "success": true,
+    "batchTitle": "PowerPlanImport.bat",
+    "batchContent": "powercfg -delete bddb0ef6-c5cb-4e69-ae81-a09d6dcf2087\nInvoke-WebRequest -Uri \"https://exmapi.onrender.com/static/premium/v1.1.2/EXM Premium Power Plan V5.pow\" -OutFile \"$Env:windir\\system32\\Exm_Premium_Power_Plan_V5.pow\" -ErrorAction SilentlyContinue\npowercfg -import \"$Env:windir\\system32\\Exm_Premium_Power_Plan_V5.pow\" e7a66b66-d6df-666d-aa66-66f66666eb66 | Out-Null\npowercfg -setactive e7a66b66-d6df-666d-aa66-66f66666eb66 | Out-Null\nexit"
+}

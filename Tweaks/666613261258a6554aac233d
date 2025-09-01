@@ -1,0 +1,5 @@
+{
+    "success": true,
+    "batchTitle": "IRQ8IRQ16.bat",
+    "batchContent": "Reg.exe add \"HKLM\\SYSTEM\\CurrentControlSet\\Control\\PriorityControl\" /v \"IRQ8Priority\" /t REG_DWORD /d \"1\" /f\nReg.exe add \"HKLM\\SYSTEM\\ControlSet001\\Control\\PriorityControl\" /v \"IRQ8Priority\" /t REG_DWORD /d \"1\" /f\n\nReg.exe add \"HKLM\\SYSTEM\\CurrentControlSet\\Control\\PriorityControl\" /v \"IRQ16Priority\" /t REG_DWORD /d \"2\" /f\nReg.exe add \"HKLM\\SYSTEM\\ControlSet001\\Control\\PriorityControl\" /v \"IRQ16Priority\" /t REG_DWORD /d \"2\" /f\nexit"
+}

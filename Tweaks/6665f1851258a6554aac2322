@@ -1,0 +1,5 @@
+{
+    "success": true,
+    "batchTitle": "Skype.ps1",
+    "batchContent": "Get-AppxPackage *Microsoft.SkypeApp* | Remove-AppxPackage"
+}

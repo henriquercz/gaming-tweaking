@@ -1,0 +1,5 @@
+{
+    "success": true,
+    "batchTitle": "DisableDMARemapping.bat",
+    "batchContent": "Reg.exe add \"HKEY_LOCAL_MACHINE\\SOFTWARE\\Microsoft\\PolicyManager\\default\\DmaGuard\\DeviceEnumerationPolicy\" /v \"value\" /t REG_DWORD /d \"2\" /f\nfor /f %%i in ('reg query \"HKEY_LOCAL_MACHINE\\SYSTEM\\CurrentControlSet\\Services\" /s /f DmaRemappingCompatible ^| find /i \"Services\\\" ') do (\n        Reg.exe add \"%%i\" /v \"DmaRemappingCompatible\" /t REG_DWORD /d \"0\" /f\n)\nexit"
+}

@@ -1,0 +1,5 @@
+{
+    "success": true,
+    "batchTitle": "ShowFileExtension.bat",
+    "batchContent": "::showfile extentions \nReg.exe add \"HKCU\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Explorer\\Advanced\" /v \"HideFileExt\" /t REG_DWORD /d 0 /f\nReg.exe add \"HKCR\\lnkfile\" /v \"NeverShowExt\" /f\nReg.exe add \"HKCR\\IE.AssocFile.URL\" /v \"NeverShowExt\" /f\nReg.exe add \"HKCR\\IE.AssocFile.WEBSITE\" /v \"NeverShowExt\" /f\nReg.exe add \"HKCR\\InternetShortcut\" /v \"NeverShowExt\" /f\nReg.exe add \"HKCR\\Microsoft.Website\" /v \"NeverShowExt\" /f\nReg.exe add \"HKCR\\piffile\" /v \"NeverShowExt\" /f\nReg.exe add \"HKCR\\SHCmdFile\" /v \"NeverShowExt\" /f\nReg.exe add \"HKCR\\LibraryFolder\" /v \"NeverShowExt\" /f\nexit"
+}

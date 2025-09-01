@@ -1,0 +1,5 @@
+{
+    "success": true,
+    "batchTitle": "MSImodeUSBController.bat",
+    "batchContent": "for /f %i in ('wmic path Win32_USBController get PNPDeviceID') do set \"str=%i\" & (\nReg.exe delete \"HKLM\\System\\CurrentControlSet\\Enum\\%i\\Device Parameters\\Interrupt Management\\Affinity Policy\" /v \"DevicePriority\" /f\nReg.exe add \"HKLM\\System\\CurrentControlSet\\Enum\\%i\\Device Parameters\\Interrupt Management\\MessageSignaledInterruptProperties\" /v \"MSISupported\" /t REG_DWORD /d \"1\" /f\n)\nexit\n"
+}

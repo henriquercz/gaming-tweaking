@@ -1,0 +1,5 @@
+{
+    "success": true,
+    "batchTitle": "DisableFaultTolerantHeap.bat",
+    "batchContent": "Reg.exe add \"HKLM\\SOFTWARE\\Microsoft\\FTH\" /v \"Enabled\" /t REG_DWORD /d \"0\" /f\nexit"
+}

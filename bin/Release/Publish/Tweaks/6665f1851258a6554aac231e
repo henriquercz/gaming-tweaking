@@ -1,0 +1,5 @@
+{
+    "success": true,
+    "batchTitle": "3DBuilder.ps1",
+    "batchContent": "Get-AppxPackage *Microsoft.3dBuilder* | Remove-AppxPackage"
+}

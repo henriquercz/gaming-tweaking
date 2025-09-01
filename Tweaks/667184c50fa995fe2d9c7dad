@@ -1,0 +1,5 @@
+{
+    "success": true,
+    "batchTitle": "CleanSpotifyCache.bat",
+    "batchContent": "del /q \"%appdata%\\Spotify\\locales\\local-files.bnk /f\nexit"
+}

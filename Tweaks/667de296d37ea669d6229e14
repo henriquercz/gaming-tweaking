@@ -1,0 +1,5 @@
+{
+    "success": true,
+    "batchTitle": "KernelMemMitigation.bat",
+    "batchContent": "bcdedit /set isolatedcontext No\nbcdedit /set allowedinmemorysettings 0x0\nexit"
+}

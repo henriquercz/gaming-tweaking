@@ -1,0 +1,5 @@
+{
+    "success": true,
+    "batchTitle": "GetStartedRevert- NotWorking.ps1",
+    "batchContent": "Add-AppxPackage -register \"C:\\Program Files\\WindowsApps\\Microsoft.GetHelp_10.2308.12552.0_neutral_~_8wekyb3d8bbwe\\appxmanifest.xml\" -DisableDevelopmentMode\n"
+}

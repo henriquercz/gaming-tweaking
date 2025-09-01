@@ -1,0 +1,5 @@
+{
+    "success": true,
+    "batchTitle": "DisableUAC.bat",
+    "batchContent": "Reg.exe ADD \"HKLM\\Software\\Microsoft\\Windows\\CurrentVersion\\Policies\\System\" /v \"EnableLUA\" /t REG_DWORD /d \"0\" /f \nexit\n"
+}

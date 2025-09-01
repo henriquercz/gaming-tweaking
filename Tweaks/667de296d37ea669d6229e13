@@ -1,0 +1,5 @@
+{
+    "success": true,
+    "batchTitle": "Enablex2ApicPolicy.bat",
+    "batchContent": "bcdedit /set x2apicpolicy Enable\nbcdedit /set uselegacyapicmode No\nexit"
+}

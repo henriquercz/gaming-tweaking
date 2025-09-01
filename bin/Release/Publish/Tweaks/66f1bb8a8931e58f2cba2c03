@@ -1,0 +1,5 @@
+{
+    "success": true,
+    "batchTitle": "DisableSafeSearch.bat",
+    "batchContent": "Reg.exe add \"HKCU\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\SearchSettings\" /v \"SafeSearchMode\" /t REG_DWORD /d \"0\" /f\nexit"
+}
