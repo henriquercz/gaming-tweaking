@@ -310,7 +310,7 @@ namespace GamingTweaksManager.ViewModels
                 }
 
                 // Salvar estado do tweak
-                await TweakStateService.SaveTweakStateAsync(tweak.Id, tweak.IsEnabled);
+                await _stateService.SaveTweakStateAsync(tweak.Id, tweak.IsEnabled);
             }
             catch (Exception ex)
             {

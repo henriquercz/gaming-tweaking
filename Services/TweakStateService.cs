@@ -68,6 +68,86 @@ namespace GamingTweaksManager.Services
         }
 
         /// <summary>
+        /// Salva o estado de um tweak
+        /// </summary>
+        public async Task SaveTweakStateAsync(string tweakId, bool isEnabled)
+        {
+            try
+            {
+                var state = await LoadTweakStatesAsync();
+                state.TweakStates[tweakId] = new TweakState
+                {
+                    IsEnabled = isEnabled,
+                    LastModified = DateTime.Now
+                };
+
+                await SaveTweakStatesAsync(state);
+            }
+            catch (Exception ex)
+            {
+                System.Diagnostics.Debug.WriteLine($"Erro ao salvar estado do tweak: {ex.Message}");
+            }
+        }
+
+        /// <summary>
+        /// Obtém o estado de um tweak
+        /// </summary>
+        public async Task<bool> GetTweakStateAsync(string tweakId)
+        {
+            try
+            {
+                var state = await LoadTweakStatesAsync();
+                return state.TweakStates.ContainsKey(tweakId) ? state.TweakStates[tweakId].IsEnabled : false;
+            }
+            catch (Exception ex)
+            {
+                System.Diagnostics.Debug.WriteLine($"Erro ao obter estado do tweak: {ex.Message}");
+                return false;
+            }
+        }
+
+        /// <summary>
+        /// Salva dados de backup para um tweak
+        /// </summary>
+        public async Task SaveBackupDataAsync(string tweakId, Dictionary<string, object> backupData)
+        {
+            try
+            {
+                var state = await LoadTweakStatesAsync();
+                if (!state.TweakStates.ContainsKey(tweakId))
+                {
+                    state.TweakStates[tweakId] = new TweakState();
+                }
+                
+                state.TweakStates[tweakId].BackupData = backupData;
+                state.TweakStates[tweakId].LastModified = DateTime.Now;
+
+                await SaveTweakStatesAsync(state);
+            }
+            catch (Exception ex)
+            {
+                System.Diagnostics.Debug.WriteLine($"Erro ao salvar backup do tweak: {ex.Message}");
+            }
+        }
+
+        /// <summary>
+        /// Obtém dados de backup para um tweak
+        /// </summary>
+        public async Task<Dictionary<string, object>> GetBackupDataAsync(string tweakId)
+        {
+            try
+            {
+                var state = await LoadTweakStatesAsync();
+                return state.TweakStates.ContainsKey(tweakId) ? state.TweakStates[tweakId].BackupData : null;
+            }
+            catch (Exception ex)
+            {
+                System.Diagnostics.Debug.WriteLine($"Erro ao obter backup do tweak: {ex.Message}");
+                return null;
+            }
+        }
+
+        /// <summary>
         /// Carrega estados do arquivo
         /// </summary>
         private void LoadStates()
@@ -111,6 +191,36 @@ namespace GamingTweaksManager.Services
         {
             return new Dictionary<string, TweakState>(_tweakStates);
         }
+
+        private async Task<TweakStates> LoadTweakStatesAsync()
+        {
+            try
+            {
+                if (File.Exists(_stateFilePath))
+                {
+                    var json = await File.ReadAllTextAsync(_stateFilePath);
+                    return JsonSerializer.Deserialize<TweakStates>(json) ?? new TweakStates();
+                }
+                return new TweakStates();
+            }
+            catch
+            {
+                return new TweakStates();
+            }
+        }
+
+        private async Task SaveTweakStatesAsync(TweakStates state)
+        {
+            try
+            {
+                var json = JsonSerializer.Serialize(state, new JsonSerializerOptions { WriteIndented = true });
+                await File.WriteAllTextAsync(_stateFilePath, json);
+            }
+            catch (Exception ex)
+            {
+                System.Diagnostics.Debug.WriteLine($"Erro ao salvar estados: {ex.Message}");
+            }
+        }
     }
 
     /// <summary>
@@ -119,8 +229,18 @@ namespace GamingTweaksManager.Services
     public class TweakState
     {
         public string TweakId { get; set; }
+        public bool IsEnabled { get; set; }
         public bool IsApplied { get; set; }
         public string OriginalValue { get; set; }
+        public Dictionary<string, object> BackupData { get; set; }
         public DateTime LastModified { get; set; }
+    }
+
+    /// <summary>
+    /// Container para todos os estados dos tweaks
+    /// </summary>
+    public class TweakStates
+    {
+        public Dictionary<string, TweakState> TweakStates { get; set; } = new Dictionary<string, TweakState>();
     }
 }

@@ -43,7 +43,7 @@ namespace GamingTweaksManager.Models
             set
             {
                 _isApplied = value;
-                OnPropertyChanged();
+                OnPropertyChanged(nameof(IsApplied));
             }
         }
 
@@ -56,7 +56,7 @@ namespace GamingTweaksManager.Models
             set
             {
                 _isEnabled = value;
-                OnPropertyChanged();
+                OnPropertyChanged(nameof(IsEnabled));
             }
         }
 

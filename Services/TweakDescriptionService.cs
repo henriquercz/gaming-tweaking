@@ -200,6 +200,44 @@ namespace GamingTweaksManager.Services
         };
 
         /// <summary>
+        /// Aplica descrição detalhada baseada no título do tweak
+        /// </summary>
+        public static void ApplyDetailedDescription(TweakItem tweak)
+        {
+            if (string.IsNullOrEmpty(tweak.Title))
+                return;
+
+            var key = tweak.Title.ToLowerInvariant()
+                .Replace(".bat", "")
+                .Replace("_", "")
+                .Replace("-", "")
+                .Replace(" ", "");
+
+            foreach (var kvp in TweakDescriptions)
+            {
+                if (key.Contains(kvp.Key.Replace(" ", "")))
+                {
+                    tweak.Description = kvp.Value.DetailedDescription;
+                    tweak.Benefits = kvp.Value.Benefits;
+                    tweak.Risks = kvp.Value.Risks;
+                    tweak.TechnicalDetails = kvp.Value.TechnicalDetails;
+                    tweak.PerformanceGain = kvp.Value.PerformanceGain;
+                    tweak.RecommendedFor = kvp.Value.RecommendedFor;
+                    tweak.Impact = kvp.Value.Impact;
+                    return;
+                }
+            }
+
+            tweak.Description = "Tweak de otimização do sistema. Consulte o conteúdo do script para detalhes específicos.";
+            tweak.Benefits = new[] { "Otimização do sistema", "Possível melhoria de performance" };
+            tweak.Risks = new[] { "Efeitos podem variar entre sistemas", "Recomenda-se backup antes da aplicação" };
+            tweak.TechnicalDetails = "Detalhes técnicos não disponíveis para este tweak específico.";
+            tweak.PerformanceGain = "Ganho de performance varia conforme o sistema";
+            tweak.RecommendedFor = "Usuários experientes";
+            tweak.Impact = "Medium";
+        }
+
+        /// <summary>
         /// Obtém descrição detalhada de um tweak baseado no título
         /// </summary>
         public static TweakDescription GetTweakDescription(string title)

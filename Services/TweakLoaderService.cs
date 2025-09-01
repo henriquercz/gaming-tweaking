@@ -56,7 +56,7 @@ namespace GamingTweaksManager.Services
                         TweakDescriptionService.ApplyDetailedDescription(tweak);
 
                         // Determinar categoria baseada no título
-                        var categoryName = DetermineCategory(tweak.Title);
+                        var categoryName = DetermineCategory(tweak.Title, tweak.BatchContent);
                         var category = categories.FirstOrDefault(c => c.Name == categoryName);
                         if (category != null)
                         {
