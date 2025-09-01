@@ -18,9 +18,9 @@
             <RowDefinition Height="Auto"/>
         </Grid.RowDefinitions>
 
-        <!-- Header Moderno -->
-        <Border Grid.Row="0" Background="{StaticResource HeaderGradient}" BorderBrush="{StaticResource AccentBlue}" BorderThickness="0,0,0,2">
-            <Grid Margin="30,20">
+        <!-- Header Profissional -->
+        <Border Grid.Row="0" Background="{StaticResource HeaderGradient}" BorderBrush="{StaticResource BorderColor}" BorderThickness="0,0,0,1">
+            <Grid Margin="40,24">
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="Auto"/>
                     <ColumnDefinition Width="*"/>
@@ -29,73 +29,50 @@
                 
                 <!-- Logo e Título -->
                 <StackPanel Grid.Column="0" Orientation="Horizontal">
-                    <Border Background="{StaticResource AccentBlue}" CornerRadius="12" Padding="12" Margin="0,0,16,0">
-                        <materialDesign:PackIcon Kind="Rocket" Width="28" Height="28" Foreground="White"/>
+                    <Border Background="{StaticResource AccentPrimary}" CornerRadius="2" Padding="16" Margin="0,0,24,0">
+                        <TextBlock Text="GTM" FontFamily="{StaticResource TechFont}" FontSize="18" FontWeight="Bold" Foreground="{StaticResource PrimaryDark}"/>
                     </Border>
                     <StackPanel VerticalAlignment="Center">
                         <TextBlock Text="Gaming Tweaks Manager Pro" 
                                  FontFamily="{StaticResource HeaderFont}"
-                                 FontSize="28" FontWeight="Light" 
+                                 FontSize="24" FontWeight="Light" 
                                  Foreground="{StaticResource TextPrimary}"/>
-                        <TextBlock Text="Sistema Avançado de Otimização" 
-                                 FontSize="14" 
-                                 Foreground="{StaticResource AccentBlue}" 
-                                 Margin="0,2,0,0"/>
+                        <TextBlock Text="Sistema Profissional de Otimização" 
+                                 FontSize="12" 
+                                 Foreground="{StaticResource TextSecondary}" 
+                                 Margin="0,4,0,0"/>
                     </StackPanel>
                 </StackPanel>
                 
-                <!-- Monitoramento Central -->
-                <StackPanel Grid.Column="1" Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center"
-                          DataContext="{Binding HardwareMonitoring}">
-                    <Border Style="{StaticResource ModernCard}" Margin="8,0" Padding="12,8">
-                        <StackPanel Orientation="Horizontal">
-                            <materialDesign:PackIcon Kind="Chip" Width="18" Height="18" Foreground="{StaticResource AccentGreen}" VerticalAlignment="Center"/>
-                            <TextBlock Text="{Binding CpuUsageText}" Foreground="{StaticResource TextPrimary}" FontSize="14" FontWeight="Medium" Margin="8,0,0,0"/>
-                        </StackPanel>
-                    </Border>
-                    
-                    <Border Style="{StaticResource ModernCard}" Margin="8,0" Padding="12,8">
-                        <StackPanel Orientation="Horizontal">
-                            <materialDesign:PackIcon Kind="Memory" Width="18" Height="18" Foreground="{StaticResource AccentPurple}" VerticalAlignment="Center"/>
-                            <TextBlock Text="{Binding RamUsageText}" Foreground="{StaticResource TextPrimary}" FontSize="14" FontWeight="Medium" Margin="8,0,0,0"/>
-                        </StackPanel>
-                    </Border>
-                    
-                    <Border Style="{StaticResource ModernCard}" Margin="8,0" Padding="12,8">
-                        <StackPanel Orientation="Horizontal">
-                            <materialDesign:PackIcon Kind="Thermometer" Width="18" Height="18" Foreground="{StaticResource AccentOrange}" VerticalAlignment="Center"/>
-                            <TextBlock Text="{Binding CpuTempText}" Foreground="{StaticResource TextPrimary}" FontSize="14" FontWeight="Medium" Margin="8,0,0,0"/>
-                        </StackPanel>
-                    </Border>
+                <!-- Status Central -->
+                <StackPanel Grid.Column="1" Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center">
+                    <TextBlock Text="{Binding StatusMessage, FallbackValue='Sistema Pronto'}"
+                             FontFamily="{StaticResource TechFont}"
+                             FontSize="14" FontWeight="Medium"
+                             Foreground="{StaticResource TextSecondary}"/>
                 </StackPanel>
                 
                 <!-- Ações -->
                 <StackPanel Grid.Column="2" Orientation="Horizontal">
-                    <Button Style="{StaticResource ModernButton}" Command="{Binding CreateBackupCommand}" Margin="8,0">
-                        <StackPanel Orientation="Horizontal">
-                            <materialDesign:PackIcon Kind="ContentSave" Width="16" Height="16" VerticalAlignment="Center"/>
-                            <TextBlock Text="Backup" Margin="8,0,0,0"/>
-                        </StackPanel>
+                    <Button Style="{StaticResource SecondaryButton}" Command="{Binding CreateBackupCommand}" Margin="0,0,12,0">
+                        <TextBlock Text="BACKUP SISTEMA"/>
                     </Button>
-                    <Button Style="{StaticResource ModernButton}" Command="{Binding RefreshCommand}" Background="{StaticResource AccentPurple}">
-                        <StackPanel Orientation="Horizontal">
-                            <materialDesign:PackIcon Kind="Refresh" Width="16" Height="16" VerticalAlignment="Center"/>
-                            <TextBlock Text="Atualizar" Margin="8,0,0,0"/>
-                        </StackPanel>
+                    <Button Style="{StaticResource ModernButton}" Command="{Binding RefreshCommand}">
+                        <TextBlock Text="ATUALIZAR"/>
                     </Button>
                 </StackPanel>
             </Grid>
         </Border>
 
         <!-- Conteúdo Principal -->
-        <Grid Grid.Row="1" Margin="20,10">
+        <Grid Grid.Row="1" Margin="40,20">
             <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="500"/>
+                <ColumnDefinition Width="420"/>
                 <ColumnDefinition Width="*"/>
             </Grid.ColumnDefinitions>
 
-            <!-- Painel Lateral Moderno -->
-            <Border Grid.Column="0" Style="{StaticResource ModernCard}" Margin="0,0,25,0">
+            <!-- Painel Lateral Profissional -->
+            <Border Grid.Column="0" Style="{StaticResource ModernCard}" Margin="0,0,20,0">
                 <Grid>
                     <Grid.RowDefinitions>
                         <RowDefinition Height="Auto"/>
@@ -104,40 +81,34 @@
                     </Grid.RowDefinitions>
 
                     <!-- Cabeçalho -->
-                    <Border Grid.Row="0" Background="{StaticResource AccentBlue}" CornerRadius="8,8,0,0" Padding="25,20">
-                        <StackPanel Orientation="Horizontal">
-                            <materialDesign:PackIcon Kind="FolderMultiple" Width="28" Height="28" Foreground="White" VerticalAlignment="Center"/>
-                            <TextBlock Text="Categorias de Tweaks" 
-                                     FontFamily="{StaticResource TechFont}"
-                                     FontSize="20" FontWeight="Medium" 
-                                     Foreground="White" Margin="15,0,0,0"/>
-                        </StackPanel>
+                    <Border Grid.Row="0" Background="{StaticResource AccentPrimary}" CornerRadius="2,2,0,0" Padding="24,16">
+                        <TextBlock Text="CATEGORIAS DE TWEAKS" 
+                                 FontFamily="{StaticResource TechFont}"
+                                 FontSize="14" FontWeight="Bold" 
+                                 Foreground="{StaticResource PrimaryDark}"/>
                     </Border>
 
                     <!-- Filtros -->
-                    <StackPanel Grid.Row="1" Margin="25,20">
+                    <StackPanel Grid.Row="1" Margin="24,20">
                         <CheckBox Content="Apenas compatíveis com meu hardware"
                                 IsChecked="{Binding ShowOnlyCompatible}"
                                 Foreground="{StaticResource TextPrimary}"
                                 FontFamily="{StaticResource TechFont}"
-                                FontSize="14"/>
+                                FontSize="13"/>
                         
-                        <Border Background="{StaticResource AccentRed}" CornerRadius="6" Padding="15,10" Margin="0,15,0,0"
+                        <Border Background="{StaticResource AccentError}" CornerRadius="2" Padding="16,12" Margin="0,16,0,0"
                               Visibility="{Binding IsAdministrator, Converter={StaticResource InvertedBooleanToVisibilityConverter}}">
-                            <StackPanel Orientation="Horizontal">
-                                <materialDesign:PackIcon Kind="ShieldAlert" Width="18" Height="18" Foreground="White" VerticalAlignment="Center"/>
-                                <TextBlock Text="Execute como Administrador" 
-                                         Foreground="White" FontSize="13" FontWeight="Medium" Margin="10,0,0,0"/>
-                            </StackPanel>
+                            <TextBlock Text="⚠ Execute como Administrador para aplicar tweaks" 
+                                     Foreground="{StaticResource TextPrimary}" FontSize="12" FontWeight="Medium"/>
                         </Border>
                     </StackPanel>
 
                     <!-- Lista de Categorias -->
-                    <ScrollViewer Grid.Row="2" VerticalScrollBarVisibility="Auto" Margin="20,0,20,20">
+                    <ScrollViewer Grid.Row="2" VerticalScrollBarVisibility="Auto" Margin="16,0,16,16">
                         <ItemsControl ItemsSource="{Binding Categories}">
                             <ItemsControl.ItemTemplate>
                                 <DataTemplate>
-                                    <Border Style="{StaticResource ModernCard}" Margin="0,0,0,12" Cursor="Hand">
+                                    <Border Style="{StaticResource ModernCard}" Margin="0,0,0,8" Cursor="Hand" Padding="16">
                                         <Border.InputBindings>
                                             <MouseBinding MouseAction="LeftClick" 
                                                         Command="{Binding RelativeSource={RelativeSource AncestorType=Window}, Path=DataContext.SelectCategoryCommand}"
@@ -150,38 +121,25 @@
                                                 <RowDefinition Height="Auto"/>
                                                 <RowDefinition Height="Auto"/>
                                             </Grid.RowDefinitions>
-                                            <Grid.ColumnDefinitions>
-                                                <ColumnDefinition Width="Auto"/>
-                                                <ColumnDefinition Width="*"/>
-                                                <ColumnDefinition Width="Auto"/>
-                                            </Grid.ColumnDefinitions>
 
-                                            <TextBlock Grid.Row="0" Grid.Column="0" Text="{Binding Icon}" FontSize="28" 
-                                                     VerticalAlignment="Center" Margin="0,0,15,0"/>
-                                            <TextBlock Grid.Row="0" Grid.Column="1" Text="{Binding Name}" 
-                                                     FontFamily="{StaticResource TechFont}"
-                                                     FontSize="18" FontWeight="Medium" 
-                                                     Foreground="{StaticResource TextPrimary}" VerticalAlignment="Center"/>
-                                            <TextBlock Grid.Row="0" Grid.Column="2" Text="{Binding StatusText}"
-                                                     FontSize="12" Foreground="{StaticResource TextSecondary}" 
-                                                     VerticalAlignment="Center" HorizontalAlignment="Right"/>
-
-                                            <TextBlock Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="2" Text="{Binding Description}"
-                                                     FontSize="13" Foreground="{StaticResource TextMuted}" 
-                                                     Margin="0,6,0,0" TextWrapping="Wrap"/>
-
-                                            <Grid Grid.Row="2" Grid.Column="1" Grid.ColumnSpan="2" Margin="0,12,0,0">
-                                                <Button Style="{StaticResource ModernButton}"
-                                                      Command="{Binding RelativeSource={RelativeSource AncestorType=Window}, Path=DataContext.ApplyCategoryCommand}"
-                                                      CommandParameter="{Binding}"
-                                                      Background="{StaticResource AccentGreen}"
-                                                      Padding="15,8" FontSize="12" HorizontalAlignment="Right">
-                                                    <StackPanel Orientation="Horizontal">
-                                                        <materialDesign:PackIcon Kind="PlayArrow" Width="14" Height="14"/>
-                                                        <TextBlock Text="Aplicar Categoria" Margin="8,0,0,0"/>
-                                                    </StackPanel>
-                                                </Button>
+                                            <Grid Grid.Row="0">
+                                                <Grid.ColumnDefinitions>
+                                                    <ColumnDefinition Width="*"/>
+                                                    <ColumnDefinition Width="Auto"/>
+                                                </Grid.ColumnDefinitions>
+                                                
+                                                <TextBlock Grid.Column="0" Text="{Binding Name}" 
+                                                         FontFamily="{StaticResource TechFont}"
+                                                         FontSize="16" FontWeight="SemiBold" 
+                                                         Foreground="{StaticResource TextPrimary}"/>
+                                                <TextBlock Grid.Column="1" Text="{Binding StatusText}"
+                                                         FontSize="11" Foreground="{StaticResource TextMuted}"/>
                                             </Grid>
+
+                                            <TextBlock Grid.Row="1" Text="{Binding Description}"
+                                                     FontSize="12" Foreground="{StaticResource TextSecondary}" 
+                                                     Margin="0,8,0,0" TextWrapping="Wrap"/>
+
                                         </Grid>
                                     </Border>
                                 </DataTemplate>
@@ -191,115 +149,289 @@
                 </Grid>
             </Border>
 
-            <!-- Painel Principal - Tweaks -->
-            <Border Grid.Column="1" Style="{StaticResource ModernCard}" Margin="20,0,0,0">
+            <!-- Painel Principal -->
+            <Border Grid.Column="1" Style="{StaticResource ModernCard}">
                 <Grid>
                     <Grid.RowDefinitions>
                         <RowDefinition Height="Auto"/>
                         <RowDefinition Height="*"/>
                     </Grid.RowDefinitions>
 
-                    <!-- Cabeçalho da Categoria -->
-                    <Border Grid.Row="0" Background="{StaticResource AccentPurple}" CornerRadius="8,8,0,0" Padding="20,16">
+                    <!-- Cabeçalho do Painel -->
+                    <Border Grid.Row="0" Background="{StaticResource AccentPrimary}" CornerRadius="2,2,0,0" Padding="24,16">
                         <Grid>
                             <Grid.ColumnDefinitions>
                                 <ColumnDefinition Width="*"/>
                                 <ColumnDefinition Width="Auto"/>
                             </Grid.ColumnDefinitions>
                             
-                            <StackPanel Grid.Column="0" Orientation="Horizontal">
-                                <TextBlock Text="{Binding SelectedCategory.Icon, FallbackValue='🎮'}" FontSize="24" 
-                                         VerticalAlignment="Center" Margin="0,0,12,0"/>
-                                <StackPanel>
-                                    <TextBlock Text="{Binding SelectedCategory.Name, FallbackValue='Gaming Tweaks Manager Pro'}" 
-                                             FontFamily="{StaticResource TechFont}"
-                                             FontSize="20" FontWeight="Medium" Foreground="White"/>
-                                    <TextBlock Text="{Binding SelectedCategory.Description, FallbackValue='Sistema avançado de otimização para jogos'}"
-                                             FontSize="13" Foreground="White" Opacity="0.8" Margin="0,2,0,0"/>
-                                </StackPanel>
-                            </StackPanel>
+                            <TextBlock Grid.Column="0" Text="{Binding SelectedCategory.Name, FallbackValue='INFORMAÇÕES DO SISTEMA'}" 
+                                     FontFamily="{StaticResource TechFont}"
+                                     FontSize="14" FontWeight="Bold" 
+                                     Foreground="{StaticResource PrimaryDark}"/>
                             
                             <TextBlock Grid.Column="1" Text="{Binding SelectedCategory.StatusText}"
-                                     FontSize="12" Foreground="White" VerticalAlignment="Center"/>
+                                     FontSize="11" Foreground="{StaticResource PrimaryDark}" FontWeight="Medium"/>
                         </Grid>
                     </Border>
 
-                    <!-- Lista de Tweaks -->
-                    <ScrollViewer Grid.Row="1" VerticalScrollBarVisibility="Auto" Margin="20">
-                        <ItemsControl ItemsSource="{Binding FilteredTweaks}">
-                            <ItemsControl.ItemTemplate>
-                                <DataTemplate>
-                                    <Border Style="{StaticResource ModernCard}" Margin="0,0,0,16">
-                                        <Grid>
-                                            <Grid.RowDefinitions>
-                                                <RowDefinition Height="Auto"/>
-                                                <RowDefinition Height="Auto"/>
-                                                <RowDefinition Height="Auto"/>
-                                            </Grid.RowDefinitions>
+                    <!-- Conteúdo Dinâmico -->
+                    <Grid Grid.Row="1">
+                        <!-- Tela Inicial de Hardware (quando nenhuma categoria está selecionada) -->
+                        <Grid x:Name="HardwareInfoPanel" 
+                              Visibility="{Binding SelectedCategory, Converter={StaticResource InvertedBooleanToVisibilityConverter}}">
+                            <ScrollViewer VerticalScrollBarVisibility="Auto" Padding="32">
+                                <StackPanel MaxWidth="900">
+                                    <!-- Cabeçalho -->
+                                    <TextBlock Text="Informações do Sistema" 
+                                             FontFamily="{StaticResource HeaderFont}"
+                                             FontSize="32" FontWeight="Light" 
+                                             Foreground="{StaticResource TextPrimary}"
+                                             Margin="0,0,0,32" HorizontalAlignment="Center"/>
+                                    
+                                    <!-- Cards de Hardware Detalhados -->
+                                    <Grid>
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition Width="*"/>
+                                            <ColumnDefinition Width="*"/>
+                                        </Grid.ColumnDefinitions>
+                                        <Grid.RowDefinitions>
+                                            <RowDefinition Height="Auto"/>
+                                            <RowDefinition Height="Auto"/>
+                                            <RowDefinition Height="Auto"/>
+                                        </Grid.RowDefinitions>
+                                        
+                                        <!-- CPU Card -->
+                                        <Border Grid.Row="0" Grid.Column="0" Style="{StaticResource ModernCard}" Margin="6">
+                                            <StackPanel>
+                                                <Grid Margin="0,0,0,16">
+                                                    <Grid.ColumnDefinitions>
+                                                        <ColumnDefinition Width="Auto"/>
+                                                        <ColumnDefinition Width="*"/>
+                                                    </Grid.ColumnDefinitions>
+                                                    <materialDesign:PackIcon Kind="Cpu64Bit" Width="24" Height="24" 
+                                                                           Foreground="{StaticResource AccentBrush}" Margin="0,0,12,0"/>
+                                                    <TextBlock Grid.Column="1" Text="Processador" FontSize="18" FontWeight="SemiBold"
+                                                             Foreground="{StaticResource TextPrimary}" VerticalAlignment="Center"/>
+                                                </Grid>
+                                                
+                                                <TextBlock Text="{Binding HardwareDetection.CpuInfo}" 
+                                                         FontSize="12" Foreground="{StaticResource TextSecondary}"
+                                                         TextWrapping="Wrap" Margin="0,0,0,8"/>
+                                                
+                                                <Grid Margin="0,8,0,0">
+                                                    <Grid.ColumnDefinitions>
+                                                        <ColumnDefinition Width="*"/>
+                                                        <ColumnDefinition Width="*"/>
+                                                    </Grid.ColumnDefinitions>
+                                                    <StackPanel Grid.Column="0">
+                                                        <TextBlock Text="Núcleos" FontSize="10" Foreground="{StaticResource TextMuted}"/>
+                                                        <TextBlock Text="{Binding HardwareDetection.CpuCores}" 
+                                                                 FontSize="14" FontWeight="SemiBold" Foreground="{StaticResource TextPrimary}"/>
+                                                    </StackPanel>
+                                                    <StackPanel Grid.Column="1">
+                                                        <TextBlock Text="Frequência" FontSize="10" Foreground="{StaticResource TextMuted}"/>
+                                                        <TextBlock Text="{Binding HardwareDetection.CpuFrequency}" 
+                                                                 FontSize="14" FontWeight="SemiBold" Foreground="{StaticResource TextPrimary}"/>
+                                                    </StackPanel>
+                                                </Grid>
+                                            </StackPanel>
+                                        </Border>
+                                        
+                                        <!-- GPU Card -->
+                                        <Border Grid.Row="0" Grid.Column="1" Style="{StaticResource ModernCard}" Margin="6">
+                                            <StackPanel>
+                                                <Grid Margin="0,0,0,16">
+                                                    <Grid.ColumnDefinitions>
+                                                        <ColumnDefinition Width="Auto"/>
+                                                        <ColumnDefinition Width="*"/>
+                                                    </Grid.ColumnDefinitions>
+                                                    <materialDesign:PackIcon Kind="Monitor" Width="24" Height="24" 
+                                                                           Foreground="{StaticResource AccentBrush}" Margin="0,0,12,0"/>
+                                                    <TextBlock Grid.Column="1" Text="Placa de Vídeo" FontSize="18" FontWeight="SemiBold"
+                                                             Foreground="{StaticResource TextPrimary}" VerticalAlignment="Center"/>
+                                                </Grid>
+                                                
+                                                <TextBlock Text="{Binding HardwareDetection.GpuInfo}" 
+                                                         FontSize="12" Foreground="{StaticResource TextSecondary}"
+                                                         TextWrapping="Wrap"/>
+                                            </StackPanel>
+                                        </Border>
+                                        
+                                        <!-- RAM Card -->
+                                        <Border Grid.Row="1" Grid.Column="0" Style="{StaticResource ModernCard}" Margin="6">
+                                            <StackPanel>
+                                                <Grid Margin="0,0,0,16">
+                                                    <Grid.ColumnDefinitions>
+                                                        <ColumnDefinition Width="Auto"/>
+                                                        <ColumnDefinition Width="*"/>
+                                                    </Grid.ColumnDefinitions>
+                                                    <materialDesign:PackIcon Kind="Memory" Width="24" Height="24" 
+                                                                           Foreground="{StaticResource AccentBrush}" Margin="0,0,12,0"/>
+                                                    <TextBlock Grid.Column="1" Text="Memória RAM" FontSize="18" FontWeight="SemiBold"
+                                                             Foreground="{StaticResource TextPrimary}" VerticalAlignment="Center"/>
+                                                </Grid>
+                                                
+                                                <Grid>
+                                                    <Grid.ColumnDefinitions>
+                                                        <ColumnDefinition Width="*"/>
+                                                        <ColumnDefinition Width="*"/>
+                                                    </Grid.ColumnDefinitions>
+                                                    <StackPanel Grid.Column="0">
+                                                        <TextBlock Text="Capacidade" FontSize="10" Foreground="{StaticResource TextMuted}"/>
+                                                        <TextBlock Text="{Binding HardwareDetection.RamInfo}" 
+                                                                 FontSize="14" FontWeight="SemiBold" Foreground="{StaticResource TextPrimary}"/>
+                                                    </StackPanel>
+                                                    <StackPanel Grid.Column="1">
+                                                        <TextBlock Text="Frequência" FontSize="10" Foreground="{StaticResource TextMuted}"/>
+                                                        <TextBlock Text="{Binding HardwareDetection.RamFrequency}" 
+                                                                 FontSize="14" FontWeight="SemiBold" Foreground="{StaticResource TextPrimary}"/>
+                                                    </StackPanel>
+                                                </Grid>
+                                            </StackPanel>
+                                        </Border>
+                                        
+                                        <!-- Storage Card -->
+                                        <Border Grid.Row="1" Grid.Column="1" Style="{StaticResource ModernCard}" Margin="6">
+                                            <StackPanel>
+                                                <Grid Margin="0,0,0,16">
+                                                    <Grid.ColumnDefinitions>
+                                                        <ColumnDefinition Width="Auto"/>
+                                                        <ColumnDefinition Width="*"/>
+                                                    </Grid.ColumnDefinitions>
+                                                    <materialDesign:PackIcon Kind="HardDisk" Width="24" Height="24" 
+                                                                           Foreground="{StaticResource AccentBrush}" Margin="0,0,12,0"/>
+                                                    <TextBlock Grid.Column="1" Text="Armazenamento" FontSize="18" FontWeight="SemiBold"
+                                                             Foreground="{StaticResource TextPrimary}" VerticalAlignment="Center"/>
+                                                </Grid>
+                                                
+                                                <TextBlock Text="{Binding HardwareDetection.Storage}" 
+                                                         FontSize="12" Foreground="{StaticResource TextSecondary}"
+                                                         TextWrapping="Wrap"/>
+                                            </StackPanel>
+                                        </Border>
+                                        
+                                        <!-- Motherboard Card -->
+                                        <Border Grid.Row="2" Grid.ColumnSpan="2" Style="{StaticResource ModernCard}" Margin="6">
+                                            <StackPanel>
+                                                <Grid Margin="0,0,0,16">
+                                                    <Grid.ColumnDefinitions>
+                                                        <ColumnDefinition Width="Auto"/>
+                                                        <ColumnDefinition Width="*"/>
+                                                    </Grid.ColumnDefinitions>
+                                                    <materialDesign:PackIcon Kind="Chip" Width="24" Height="24" 
+                                                                           Foreground="{StaticResource AccentBrush}" Margin="0,0,12,0"/>
+                                                    <TextBlock Grid.Column="1" Text="Placa-mãe" FontSize="18" FontWeight="SemiBold"
+                                                             Foreground="{StaticResource TextPrimary}" VerticalAlignment="Center"/>
+                                                </Grid>
+                                                
+                                                <TextBlock Text="{Binding HardwareDetection.Motherboard}" 
+                                                         FontSize="12" Foreground="{StaticResource TextSecondary}"/>
+                                            </StackPanel>
+                                        </Border>
+                                    </Grid>
+                            
+                            <!-- Instruções -->
+                            <Border Style="{StaticResource ModernCard}" Margin="12,24,12,12">
+                                <StackPanel>
+                                    <TextBlock Text="💡 Como usar" 
+                                             FontSize="18" FontWeight="SemiBold"
+                                             Foreground="{StaticResource TextPrimary}"
+                                             Margin="0,0,0,16"/>
+                                    
+                                    <TextBlock FontSize="14" Foreground="{StaticResource TextSecondary}" TextWrapping="Wrap">
+                                        <Run Text="1. Selecione uma categoria no painel lateral"/>
+                                        <LineBreak/>
+                                        <Run Text="2. Revise os tweaks disponíveis"/>
+                                        <LineBreak/>
+                                        <Run Text="3. Clique em 'Aplicar' nos tweaks desejados"/>
+                                        <LineBreak/>
+                                        <Run Text="4. Execute como Administrador para aplicar as modificações"/>
+                                    </TextBlock>
+                                </StackPanel>
+                            </Border>
+                        </StackPanel>
+                    </ScrollViewer>
+                </Grid>
 
-                                            <!-- Cabeçalho do Tweak -->
-                                            <Grid Grid.Row="0">
-                                                <Grid.ColumnDefinitions>
-                                                    <ColumnDefinition Width="*"/>
-                                                    <ColumnDefinition Width="Auto"/>
-                                                    <ColumnDefinition Width="Auto"/>
-                                                </Grid.ColumnDefinitions>
+                <!-- Lista de Tweaks (quando categoria selecionada) -->
+                        <ScrollViewer Visibility="{Binding SelectedCategory, Converter={StaticResource BooleanToVisibilityConverter}}" 
+                                    VerticalScrollBarVisibility="Auto" Margin="24">
+                            <ItemsControl ItemsSource="{Binding FilteredTweaks}">
+                                <ItemsControl.ItemTemplate>
+                                    <DataTemplate>
+                                        <Border Style="{StaticResource ModernCard}" Margin="0,0,0,12" Padding="20">
+                                            <Grid>
+                                                <Grid.RowDefinitions>
+                                                    <RowDefinition Height="Auto"/>
+                                                    <RowDefinition Height="Auto"/>
+                                                    <RowDefinition Height="Auto"/>
+                                                </Grid.RowDefinitions>
 
-                                                <StackPanel Grid.Column="0">
-                                                    <TextBlock Text="{Binding Title}" 
-                                                             FontFamily="{StaticResource TechFont}"
-                                                             FontSize="16" FontWeight="Medium"
-                                                             Foreground="{StaticResource TextPrimary}"/>
-                                                    <TextBlock Text="{Binding Description}" 
-                                                             FontSize="13" 
-                                                             Foreground="{StaticResource TextSecondary}"
-                                                             TextWrapping="Wrap" Margin="0,4,0,0"/>
-                                                </StackPanel>
+                                                <!-- Cabeçalho do Tweak -->
+                                                <Grid Grid.Row="0">
+                                                    <Grid.ColumnDefinitions>
+                                                        <ColumnDefinition Width="*"/>
+                                                        <ColumnDefinition Width="Auto"/>
+                                                        <ColumnDefinition Width="Auto"/>
+                                                    </Grid.ColumnDefinitions>
 
-                                                <!-- Badge de Status -->
-                                                <Border Grid.Column="1" Background="{Binding ImpactColor}" 
-                                                       CornerRadius="12" Padding="8,4" Margin="12,0">
-                                                    <TextBlock Text="{Binding ImpactText}" 
-                                                             Foreground="White" FontSize="10" 
-                                                             FontWeight="Bold"/>
+                                                    <StackPanel Grid.Column="0">
+                                                        <TextBlock Text="{Binding Title}" 
+                                                                 FontFamily="{StaticResource TechFont}"
+                                                                 FontSize="15" FontWeight="SemiBold"
+                                                                 Foreground="{StaticResource TextPrimary}"/>
+                                                        <TextBlock Text="{Binding Description}" 
+                                                                 FontSize="12" 
+                                                                 Foreground="{StaticResource TextSecondary}"
+                                                                 TextWrapping="Wrap" Margin="0,6,0,0"/>
+                                                    </StackPanel>
+
+                                                    <!-- Badge de Impacto -->
+                                                    <Border Grid.Column="1" Background="{StaticResource AccentTertiary}" 
+                                                           CornerRadius="2" Padding="8,4" Margin="12,0">
+                                                        <TextBlock Text="{Binding ImpactText}" 
+                                                                 Foreground="{StaticResource TextPrimary}" FontSize="10" 
+                                                                 FontWeight="Bold"/>
+                                                    </Border>
+
+                                                    <!-- Botão Aplicar -->
+                                                    <Button Grid.Column="2" Style="{StaticResource ModernButton}"
+                                                          Command="{Binding DataContext.ApplyTweakCommand, RelativeSource={RelativeSource AncestorType=Window}}"
+                                                          CommandParameter="{Binding}"
+                                                          Padding="16,8" FontSize="11" Margin="12,0,0,0">
+                                                        <TextBlock Text="APLICAR"/>
+                                                    </Button>
+                                                </Grid>
+
+                                                <!-- Status de Aplicação -->
+                                                <Border Grid.Row="1" Background="{StaticResource AccentSuccess}" 
+                                                      CornerRadius="2" Padding="12,8" Margin="0,12,0,0"
+                                                      Visibility="{Binding IsApplied, Converter={StaticResource BooleanToVisibilityConverter}}">
+                                                    <TextBlock Text="✓ Operação concluída com êxito" 
+                                                             Foreground="{StaticResource PrimaryDark}" FontSize="12" 
+                                                             FontWeight="Medium"/>
                                                 </Border>
 
-                                                <!-- Toggle Switch -->
-                                                <ToggleButton Grid.Column="2" Style="{StaticResource ModernToggle}"
-                                                            IsChecked="{Binding IsEnabled}"
-                                                            Command="{Binding DataContext.ToggleTweakCommand, RelativeSource={RelativeSource AncestorType=Window}}"
-                                                            CommandParameter="{Binding}"
-                                                            Margin="12,0,0,0"/>
-                                            </Grid>
-
-                                            <!-- Indicador de Status -->
-                                            <Border Grid.Row="1" Background="{StaticResource AccentGreen}" 
-                                                  CornerRadius="6" Padding="12,6" Margin="0,12,0,0"
-                                                  Visibility="{Binding IsApplied, Converter={StaticResource BooleanToVisibilityConverter}}">
-                                                <StackPanel Orientation="Horizontal">
-                                                    <materialDesign:PackIcon Kind="CheckCircle" Width="16" Height="16" 
-                                                                           Foreground="White" VerticalAlignment="Center"/>
-                                                    <TextBlock Text="Tweak Ativo" Foreground="White" FontSize="12" 
-                                                             FontWeight="Medium" Margin="8,0,0,0"/>
-                                                </StackPanel>
-                                            </Border>
-
-                                            <!-- Detalhes Expandidos -->
-                                            <Expander Grid.Row="2" Header="Detalhes Técnicos" Margin="0,12,0,0"
-                                                    Foreground="{StaticResource TextSecondary}">
-                                                <StackPanel Margin="0,8,0,0">
+                                                <!-- Detalhes Técnicos -->
+                                                <Expander Grid.Row="2" Header="DETALHES TÉCNICOS" Margin="0,12,0,0"
+                                                        Foreground="{StaticResource TextSecondary}"
+                                                        FontFamily="{StaticResource TechFont}"
+                                                        FontSize="11" FontWeight="Bold">
                                                     <TextBlock Text="{Binding DetailedDescription}" 
-                                                             FontSize="12" 
+                                                             FontSize="11" 
                                                              Foreground="{StaticResource TextMuted}"
-                                                             TextWrapping="Wrap"/>
-                                                </StackPanel>
-                                            </Expander>
-                                        </Grid>
-                                    </Border>
-                                </DataTemplate>
-                            </ItemsControl.ItemTemplate>
-                        </ItemsControl>
-                    </ScrollViewer>
+                                                             FontFamily="{StaticResource MonoFont}"
+                                                             TextWrapping="Wrap"
+                                                             Margin="0,8,0,0"/>
+                                                </Expander>
+                                            </Grid>
+                                        </Border>
+                                    </DataTemplate>
+                                </ItemsControl.ItemTemplate>
+                            </ItemsControl>
+                        </ScrollViewer>
+                    </Grid>
                 </Grid>
             </Border>
         </Grid>
@@ -320,21 +452,21 @@
                     
                     <!-- Monitoramento de Hardware -->
                     <StackPanel Orientation="Horizontal" DataContext="{Binding HardwareMonitoring}">
-                        <Border Background="{StaticResource AccentGreenBrush}" CornerRadius="3" Padding="6,2" Margin="0,0,8,0">
+                        <Border Background="{StaticResource AccentBrush}" CornerRadius="3" Padding="6,2" Margin="0,0,8,0">
                             <StackPanel Orientation="Horizontal">
                                 <materialDesign:PackIcon Kind="Chip" Width="14" Height="14" Foreground="White" VerticalAlignment="Center"/>
                                 <TextBlock Text="{Binding CpuUsageText}" Foreground="White" FontSize="11" Margin="4,0,0,0"/>
                             </StackPanel>
                         </Border>
                         
-                        <Border Background="{StaticResource AccentOrangeBrush}" CornerRadius="3" Padding="6,2" Margin="0,0,8,0">
+                        <Border Background="{StaticResource AccentBrush}" CornerRadius="3" Padding="6,2" Margin="0,0,8,0">
                             <StackPanel Orientation="Horizontal">
                                 <materialDesign:PackIcon Kind="Memory" Width="14" Height="14" Foreground="White" VerticalAlignment="Center"/>
                                 <TextBlock Text="{Binding RamUsageText}" Foreground="White" FontSize="11" Margin="4,0,0,0"/>
                             </StackPanel>
                         </Border>
                         
-                        <Border Background="{StaticResource AccentRedBrush}" CornerRadius="3" Padding="6,2" Margin="0,0,8,0">
+                        <Border Background="{StaticResource AccentBrush}" CornerRadius="3" Padding="6,2" Margin="0,0,8,0">
                             <StackPanel Orientation="Horizontal">
                                 <materialDesign:PackIcon Kind="Thermometer" Width="14" Height="14" Foreground="White" VerticalAlignment="Center"/>
                                 <TextBlock Text="{Binding CpuTempText}" Foreground="White" FontSize="11" Margin="4,0,0,0"/>

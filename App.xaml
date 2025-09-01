@@ -19,35 +19,37 @@
             <FontFamily x:Key="HeaderFont">Segoe UI Light, Arial</FontFamily>
             <FontFamily x:Key="MonoFont">Cascadia Code, Consolas, Courier New</FontFamily>
             
-            <!-- Paleta de Cores Moderna com Alto Contraste -->
-            <SolidColorBrush x:Key="PrimaryDark" Color="#0D1117"/>
-            <SolidColorBrush x:Key="DarkBackground" Color="#0A0E1A"/>
-            <SolidColorBrush x:Key="DarkBackgroundBrush" Color="#0A0E1A"/>
-            <SolidColorBrush x:Key="DarkCardBrush" Color="#1E2328"/>
-            <SolidColorBrush x:Key="AccentBlue" Color="#58A6FF"/>
-            <SolidColorBrush x:Key="AccentGreen" Color="#3FB950"/>
-            <SolidColorBrush x:Key="AccentGreenBrush" Color="#3FB950"/>
-            <SolidColorBrush x:Key="AccentRed" Color="#F85149"/>
-            <SolidColorBrush x:Key="AccentRedBrush" Color="#F85149"/>
-            <SolidColorBrush x:Key="AccentPurple" Color="#BC8CFF"/>
-            <SolidColorBrush x:Key="AccentPurpleBrush" Color="#BC8CFF"/>
-            <SolidColorBrush x:Key="AccentOrange" Color="#FFA657"/>
-            <SolidColorBrush x:Key="AccentOrangeBrush" Color="#FFA657"/>
-            <SolidColorBrush x:Key="CardBackground" Color="#21262D"/>
-            <SolidColorBrush x:Key="BorderColor" Color="#30363D"/>
-            <SolidColorBrush x:Key="TextPrimary" Color="#F0F6FC"/>
-            <SolidColorBrush x:Key="TextSecondary" Color="#E6EDF3"/>
-            <SolidColorBrush x:Key="TextMuted" Color="#C9D1D9"/>
+            <!-- Paleta Profissional Preto e Branco -->
+            <SolidColorBrush x:Key="PrimaryDark" Color="#000000"/>
+            <SolidColorBrush x:Key="DarkBackground" Color="#000000"/>
+            <SolidColorBrush x:Key="DarkBackgroundBrush" Color="#000000"/>
+            <SolidColorBrush x:Key="DarkCardBrush" Color="#1A1A1A"/>
+            <SolidColorBrush x:Key="AccentPrimary" Color="#FFFFFF"/>
+            <SolidColorBrush x:Key="AccentSecondary" Color="#CCCCCC"/>
+            <SolidColorBrush x:Key="AccentTertiary" Color="#999999"/>
+            <SolidColorBrush x:Key="AccentSuccess" Color="#FFFFFF"/>
+            <SolidColorBrush x:Key="AccentWarning" Color="#CCCCCC"/>
+            <SolidColorBrush x:Key="AccentError" Color="#666666"/>
+            <SolidColorBrush x:Key="CardBackground" Color="#0F0F0F"/>
+            <SolidColorBrush x:Key="CardBackgroundHover" Color="#1F1F1F"/>
+            <SolidColorBrush x:Key="BorderColor" Color="#333333"/>
+            <SolidColorBrush x:Key="BorderColorHover" Color="#555555"/>
+            <SolidColorBrush x:Key="TextPrimary" Color="#FFFFFF"/>
+            <SolidColorBrush x:Key="TextSecondary" Color="#CCCCCC"/>
+            <SolidColorBrush x:Key="TextMuted" Color="#999999"/>
+            <SolidColorBrush x:Key="TextDisabled" Color="#666666"/>
+            <SolidColorBrush x:Key="AccentBrush" Color="#FFFFFF"/>
+            <SolidColorBrush x:Key="AccentGreen" Color="#CCCCCC"/>
             
-            <!-- Gradientes -->
+            <!-- Gradientes Profissionais -->
             <LinearGradientBrush x:Key="HeaderGradient" StartPoint="0,0" EndPoint="1,1">
-                <GradientStop Color="#0D1117" Offset="0"/>
-                <GradientStop Color="#161B22" Offset="1"/>
+                <GradientStop Color="#000000" Offset="0"/>
+                <GradientStop Color="#1A1A1A" Offset="1"/>
             </LinearGradientBrush>
             
             <LinearGradientBrush x:Key="CardGradient" StartPoint="0,0" EndPoint="1,1">
-                <GradientStop Color="#21262D" Offset="0"/>
-                <GradientStop Color="#30363D" Offset="1"/>
+                <GradientStop Color="#0F0F0F" Offset="0"/>
+                <GradientStop Color="#1A1A1A" Offset="1"/>
             </LinearGradientBrush>
             
             <!-- Conversor para inversão de visibilidade -->
@@ -67,25 +69,18 @@
 
             <!-- Estilos Modernos -->
             
-            <!-- Estilo para Cards -->
+            <!-- Estilo para Cards Profissionais -->
             <Style x:Key="ModernCard" TargetType="Border">
                 <Setter Property="Background" Value="{StaticResource CardGradient}"/>
                 <Setter Property="BorderBrush" Value="{StaticResource BorderColor}"/>
                 <Setter Property="BorderThickness" Value="1"/>
-                <Setter Property="CornerRadius" Value="12"/>
-                <Setter Property="Padding" Value="20"/>
-                <Setter Property="Margin" Value="8"/>
+                <Setter Property="CornerRadius" Value="4"/>
+                <Setter Property="Padding" Value="24"/>
+                <Setter Property="Margin" Value="12"/>
                 <Style.Triggers>
                     <Trigger Property="IsMouseOver" Value="True">
-                        <Setter Property="BorderBrush" Value="{StaticResource AccentBlue}"/>
-                        <Setter Property="Background">
-                            <Setter.Value>
-                                <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
-                                    <GradientStop Color="#2A2F36" Offset="0"/>
-                                    <GradientStop Color="#3A404A" Offset="1"/>
-                                </LinearGradientBrush>
-                            </Setter.Value>
-                        </Setter>
+                        <Setter Property="BorderBrush" Value="{StaticResource BorderColorHover}"/>
+                        <Setter Property="Background" Value="{StaticResource CardBackgroundHover}"/>
                     </Trigger>
                 </Style.Triggers>
             </Style>
@@ -139,26 +134,65 @@
                 </Setter>
             </Style>
             
-            <!-- Estilo para Botões Modernos -->
+            <!-- Estilo para Botões Profissionais -->
             <Style x:Key="ModernButton" TargetType="Button">
-                <Setter Property="Background" Value="{StaticResource AccentBlue}"/>
-                <Setter Property="Foreground" Value="{StaticResource TextPrimary}"/>
-                <Setter Property="BorderThickness" Value="0"/>
-                <Setter Property="Padding" Value="16,10"/>
+                <Setter Property="Background" Value="{StaticResource AccentPrimary}"/>
+                <Setter Property="Foreground" Value="{StaticResource PrimaryDark}"/>
+                <Setter Property="BorderBrush" Value="{StaticResource BorderColor}"/>
+                <Setter Property="BorderThickness" Value="1"/>
+                <Setter Property="Padding" Value="20,12"/>
                 <Setter Property="FontFamily" Value="{StaticResource TechFont}"/>
-                <Setter Property="FontWeight" Value="Medium"/>
+                <Setter Property="FontWeight" Value="SemiBold"/>
+                <Setter Property="FontSize" Value="14"/>
                 <Setter Property="Template">
                     <Setter.Value>
                         <ControlTemplate TargetType="Button">
                             <Border Background="{TemplateBinding Background}" 
-                                  CornerRadius="8" 
+                                  BorderBrush="{TemplateBinding BorderBrush}"
+                                  BorderThickness="{TemplateBinding BorderThickness}"
+                                  CornerRadius="2" 
                                   Padding="{TemplateBinding Padding}">
                                 <ContentPresenter HorizontalAlignment="Center" 
                                                 VerticalAlignment="Center"/>
                             </Border>
                             <ControlTemplate.Triggers>
                                 <Trigger Property="IsMouseOver" Value="True">
-                                    <Setter Property="Background" Value="{StaticResource AccentPurple}"/>
+                                    <Setter Property="Background" Value="{StaticResource AccentSecondary}"/>
+                                </Trigger>
+                                <Trigger Property="IsPressed" Value="True">
+                                    <Setter Property="Background" Value="{StaticResource AccentTertiary}"/>
+                                </Trigger>
+                            </ControlTemplate.Triggers>
+                        </ControlTemplate>
+                    </Setter.Value>
+                </Setter>
+            </Style>
+            
+            <!-- Estilo para Botões Secundários -->
+            <Style x:Key="SecondaryButton" TargetType="Button">
+                <Setter Property="Background" Value="Transparent"/>
+                <Setter Property="Foreground" Value="{StaticResource TextPrimary}"/>
+                <Setter Property="BorderBrush" Value="{StaticResource BorderColor}"/>
+                <Setter Property="BorderThickness" Value="1"/>
+                <Setter Property="Padding" Value="20,12"/>
+                <Setter Property="FontFamily" Value="{StaticResource TechFont}"/>
+                <Setter Property="FontWeight" Value="Medium"/>
+                <Setter Property="FontSize" Value="14"/>
+                <Setter Property="Template">
+                    <Setter.Value>
+                        <ControlTemplate TargetType="Button">
+                            <Border Background="{TemplateBinding Background}" 
+                                  BorderBrush="{TemplateBinding BorderBrush}"
+                                  BorderThickness="{TemplateBinding BorderThickness}"
+                                  CornerRadius="2" 
+                                  Padding="{TemplateBinding Padding}">
+                                <ContentPresenter HorizontalAlignment="Center" 
+                                                VerticalAlignment="Center"/>
+                            </Border>
+                            <ControlTemplate.Triggers>
+                                <Trigger Property="IsMouseOver" Value="True">
+                                    <Setter Property="Background" Value="{StaticResource CardBackgroundHover}"/>
+                                    <Setter Property="BorderBrush" Value="{StaticResource BorderColorHover}"/>
                                 </Trigger>
                             </ControlTemplate.Triggers>
                         </ControlTemplate>

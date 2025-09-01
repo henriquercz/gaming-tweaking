@@ -105,6 +105,7 @@ namespace GamingTweaksManager.ViewModels
 
         public string HardwareInfoText => _hardwareDetection.GetHardwareInfo();
         public bool IsAdministrator => _isAdministrator;
+        public HardwareDetectionService HardwareDetection => _hardwareDetection;
 
         // Comandos
         public ICommand ApplyTweakCommand { get; private set; }
@@ -112,6 +113,7 @@ namespace GamingTweaksManager.ViewModels
         public ICommand SelectCategoryCommand { get; private set; }
         public ICommand ApplyCategoryCommand { get; private set; }
         public ICommand RefreshCommand { get; private set; }
+        public ICommand CreateBackupCommand { get; private set; }
         public HardwareMonitoringService HardwareMonitoring => _hardwareMonitoring;
 
         public MainViewModel()
@@ -138,6 +140,7 @@ namespace GamingTweaksManager.ViewModels
             SelectCategoryCommand = new RelayCommand<TweakCategory>(SelectCategory);
             ApplyCategoryCommand = new RelayCommand<TweakCategory>(async (category) => await ApplyCategoryAsync(category));
             RefreshCommand = new RelayCommand(async () => await LoadTweaksAsync());
+            CreateBackupCommand = new RelayCommand(async () => await CreateSystemBackupAsync());
 
             // Carregar tweaks na inicialização
             _ = Task.Run(async () => await LoadTweaksAsync());
@@ -243,19 +246,21 @@ namespace GamingTweaksManager.ViewModels
         }
 
         /// <summary>
-        /// Aplica um tweak individual
+        /// Aplica um tweak individual com feedback profissional
         /// </summary>
         private async Task ApplyTweakAsync(TweakItem tweak)
         {
             if (!_isAdministrator)
             {
-                StatusMessage = "É necessário executar como administrador para aplicar tweaks";
+                StatusMessage = "⚠ É necessário executar como administrador para aplicar tweaks";
+                MessageBox.Show("Execute o aplicativo como Administrador para aplicar tweaks.", 
+                              "Privilégios Insuficientes", MessageBoxButton.OK, MessageBoxImage.Warning);
                 return;
             }
 
             try
             {
-                StatusMessage = $"Aplicando tweak: {tweak.Title}...";
+                StatusMessage = $"Aplicando: {tweak.Title}...";
                 IsLoading = true;
 
                 var success = await _tweakExecution.ExecuteTweakAsync(tweak);
@@ -263,16 +268,24 @@ namespace GamingTweaksManager.ViewModels
                 if (success)
                 {
                     tweak.IsApplied = true;
-                    StatusMessage = $"Tweak '{tweak.Title}' aplicado com sucesso!";
+                    StatusMessage = $"✓ Operação concluída com êxito: {tweak.Title}";
+                    
+                    // Mostrar mensagem de sucesso similar ao CMD
+                    MessageBox.Show($"Operação concluída com êxito.\n\nTweak aplicado: {tweak.Title}", 
+                                  "Sucesso", MessageBoxButton.OK, MessageBoxImage.Information);
                 }
                 else
                 {
-                    StatusMessage = $"Falha ao aplicar tweak: {tweak.Title}";
+                    StatusMessage = $"✗ Falha na operação: {tweak.Title}";
+                    MessageBox.Show($"Erro na operação.\n\nFalha ao aplicar: {tweak.Title}\n\nVerifique os logs para mais detalhes.", 
+                                  "Erro", MessageBoxButton.OK, MessageBoxImage.Error);
                 }
             }
             catch (Exception ex)
             {
-                StatusMessage = $"Erro ao aplicar tweak: {ex.Message}";
+                StatusMessage = $"✗ Erro crítico: {ex.Message}";
+                MessageBox.Show($"Erro crítico na operação.\n\nDetalhes: {ex.Message}", 
+                              "Erro Crítico", MessageBoxButton.OK, MessageBoxImage.Error);
             }
             finally
             {
