@@ -75,7 +75,7 @@ namespace GamingTweaksManager.Services
             try
             {
                 var state = await LoadTweakStatesAsync();
-                state.TweakStates[tweakId] = new TweakState
+                state.States[tweakId] = new TweakState
                 {
                     IsEnabled = isEnabled,
                     LastModified = DateTime.Now
@@ -97,7 +97,7 @@ namespace GamingTweaksManager.Services
             try
             {
                 var state = await LoadTweakStatesAsync();
-                return state.TweakStates.ContainsKey(tweakId) ? state.TweakStates[tweakId].IsEnabled : false;
+                return state.States.ContainsKey(tweakId) ? state.States[tweakId].IsEnabled : false;
             }
             catch (Exception ex)
             {
@@ -114,13 +114,13 @@ namespace GamingTweaksManager.Services
             try
             {
                 var state = await LoadTweakStatesAsync();
-                if (!state.TweakStates.ContainsKey(tweakId))
+                if (!state.States.ContainsKey(tweakId))
                 {
-                    state.TweakStates[tweakId] = new TweakState();
+                    state.States[tweakId] = new TweakState();
                 }
                 
-                state.TweakStates[tweakId].BackupData = backupData;
-                state.TweakStates[tweakId].LastModified = DateTime.Now;
+                state.States[tweakId].BackupData = backupData;
+                state.States[tweakId].LastModified = DateTime.Now;
 
                 await SaveTweakStatesAsync(state);
             }
@@ -138,7 +138,7 @@ namespace GamingTweaksManager.Services
             try
             {
                 var state = await LoadTweakStatesAsync();
-                return state.TweakStates.ContainsKey(tweakId) ? state.TweakStates[tweakId].BackupData : null;
+                return state.States.ContainsKey(tweakId) ? state.States[tweakId].BackupData : null;
             }
             catch (Exception ex)
             {
@@ -241,6 +241,6 @@ namespace GamingTweaksManager.Services
     /// </summary>
     public class TweakStates
     {
-        public Dictionary<string, TweakState> TweakStates { get; set; } = new Dictionary<string, TweakState>();
+        public Dictionary<string, TweakState> States { get; set; } = new Dictionary<string, TweakState>();
     }
 }

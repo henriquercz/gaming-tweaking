@@ -50,7 +50,8 @@ namespace GamingTweaksManager.Services
                         tweak.Title = TweakFormatterService.FormatTweakName(tweak.Title);
                     
                         // Carregar estado salvo do tweak
-                        tweak.IsEnabled = await TweakStateService.GetTweakStateAsync(tweak.Id);
+                        var stateService = new TweakStateService();
+                        tweak.IsEnabled = await stateService.GetTweakStateAsync(tweak.Id);
                     
                         // Aplicar descrição detalhada
                         TweakDescriptionService.ApplyDetailedDescription(tweak);

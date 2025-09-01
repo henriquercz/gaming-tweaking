@@ -21,6 +21,7 @@ namespace GamingTweaksManager.ViewModels
         private readonly HardwareDetectionService _hardwareDetection;
         private readonly TweakExecutionService _tweakExecution;
         private readonly HardwareMonitoringService _hardwareMonitoring;
+        private readonly TweakStateService _stateService;
 
         private ObservableCollection<TweakCategory> _categories;
         private TweakCategory _selectedCategory;
@@ -119,6 +120,7 @@ namespace GamingTweaksManager.ViewModels
             _hardwareDetection = new HardwareDetectionService();
             _tweakExecution = new TweakExecutionService();
             _hardwareMonitoring = new HardwareMonitoringService();
+            _stateService = new TweakStateService();
 
             // Iniciar monitoramento de hardware
             _hardwareMonitoring.StartMonitoring();
@@ -351,15 +353,18 @@ namespace GamingTweaksManager.ViewModels
                 {
                     StatusMessage = $"Aplicando {tweak.Title}... ({successCount + errorCount + 1}/{filteredTweaks.Count})";
                     
-                    var executionResult = await _tweakExecution.ExecuteTweakAsync(tweak);
+                    var tweakResult = await _tweakExecution.ExecuteTweakAsync(tweak);
                     
-                    if (executionResult.Success)
+                    if (tweakResult)
+                    {
                         successCount++;
+                    }
                     else
+                    {
                         errorCount++;
+                    }
                 }
 
-                StatusMessage = $"✅ Categoria '{category.Name}': {successCount} sucessos, {errorCount} erros";
                 UpdateCategoryCounters();
 
                 MessageBox.Show(

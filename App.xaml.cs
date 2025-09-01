@@ -12,7 +12,7 @@ namespace GamingTweaksManager
             base.OnStartup(e);
 
             // Verificar se está executando como administrador
-            if (!Services.TweakExecutionService.IsRunningAsAdministrator())
+            if (!IsRunningAsAdministrator())
             {
                 MessageBox.Show(
                     "⚠️ AVISO: O aplicativo não está sendo executado como Administrador.\n\n" +
@@ -22,6 +22,16 @@ namespace GamingTweaksManager
                     MessageBoxButton.OK,
                     MessageBoxImage.Warning);
             }
+        }
+
+        /// <summary>
+        /// Verifica se está executando como administrador
+        /// </summary>
+        private bool IsRunningAsAdministrator()
+        {
+            var identity = System.Security.Principal.WindowsIdentity.GetCurrent();
+            var principal = new System.Security.Principal.WindowsPrincipal(identity);
+            return principal.IsInRole(System.Security.Principal.WindowsBuiltInRole.Administrator);
         }
     }
 }
