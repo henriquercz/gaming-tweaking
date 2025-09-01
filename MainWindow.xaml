@@ -47,7 +47,7 @@
                 <!-- Monitoramento Central -->
                 <StackPanel Grid.Column="1" Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center"
                           DataContext="{Binding HardwareMonitoring}"
-                          Visibility="{Binding DataContext.SelectedCategory, RelativeSource={RelativeSource AncestorType=Window}, Converter={StaticResource BoolToVisConverter}}">
+                          Visibility="{Binding DataContext.SelectedCategory, RelativeSource={RelativeSource AncestorType=Window}, Converter={StaticResource BooleanToVisibilityConverter}}">
                     <Border Style="{StaticResource ModernCard}" Margin="8,0" Padding="12,8">
                         <StackPanel Orientation="Horizontal">
                             <materialDesign:PackIcon Kind="Chip" Width="18" Height="18" Foreground="{StaticResource AccentGreen}" VerticalAlignment="Center"/>
@@ -123,7 +123,7 @@
                                 FontFamily="{StaticResource TechFont}"/>
                         
                         <Border Background="{StaticResource AccentRed}" CornerRadius="6" Padding="12,8" Margin="0,12,0,0"
-                              Visibility="{Binding IsAdministrator, Converter={StaticResource BoolToVisConverter}}">
+                              Visibility="{Binding IsAdministrator, Converter={StaticResource BooleanToVisibilityConverter}}">
                             <StackPanel Orientation="Horizontal">
                                 <materialDesign:PackIcon Kind="ShieldAlert" Width="16" Height="16" Foreground="White" VerticalAlignment="Center"/>
                                 <TextBlock Text="Execute como Administrador" 
@@ -280,7 +280,7 @@
                                             <!-- Indicador de Status -->
                                             <Border Grid.Row="1" Background="{StaticResource AccentGreen}" 
                                                   CornerRadius="6" Padding="12,6" Margin="0,12,0,0"
-                                                  Visibility="{Binding IsApplied, Converter={StaticResource BoolToVisConverter}}">
+                                                  Visibility="{Binding IsApplied, Converter={StaticResource BooleanToVisibilityConverter}}">
                                                 <StackPanel Orientation="Horizontal">
                                                     <materialDesign:PackIcon Kind="CheckCircle" Width="16" Height="16" 
                                                                            Foreground="White" VerticalAlignment="Center"/>
@@ -349,7 +349,7 @@
 
                     <ProgressBar Grid.Column="1" Width="200" Height="4"
                                IsIndeterminate="{Binding IsLoading}"
-                               Visibility="{Binding IsLoading, Converter={StaticResource BoolToVisConverter}}"
+                               Visibility="{Binding IsLoading, Converter={StaticResource BooleanToVisibilityConverter}}"
                                Margin="16,0,0,0"/>
                 </Grid>
             </materialDesign:Card>
