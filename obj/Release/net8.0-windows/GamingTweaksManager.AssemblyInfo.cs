@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Release")]
 [assembly: System.Reflection.AssemblyCopyrightAttribute("© 2024 Capitão Henrique Gaming Solutions")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+64d84ee28873846dcb70031838c3ea2bd79dc497")]
 [assembly: System.Reflection.AssemblyProductAttribute("Gaming Tweaks Manager")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Gaming Tweaks Manager")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
